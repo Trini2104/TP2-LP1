@@ -7,7 +7,7 @@ class cFecha
 {
 public:
 	int diaDespegue, diaLlegada, horaDespegue, horaLlegada;
-	int mesDespegue, diaLlegada;
+	int mesDespegue, mesLlegada;
 	int anioDespegue, anioLlegada;
 
 	
