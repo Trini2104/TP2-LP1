@@ -14,13 +14,14 @@ private:
 	const string NumVuelo;
 	cFecha* FechaYHoraVuelo;//fecha supuesta
 	const int NumAsiento;
-	int CantidadDeEquiaje;
+	int CantidadDeEquipaje;
 	float pesoDeEquipaje;
 
 public:
 	cPasajero(const string _DNI, const string _nombre, const string _apellido, const string _NumVuelo, cFecha* _FechaVuelo, const int _NumAsiento);//agregar lista 
 	~cPasajero();
-	bool AgregarEquipaje(); //Devuelve si supera o no supera el peso 
+
+	bool AgregarEquipaje();//chequea que el equipaje total no supere los 25kg p/persona
 
 	string to_string();
 	void imprimir();
