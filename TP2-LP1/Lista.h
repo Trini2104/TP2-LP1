@@ -32,5 +32,7 @@ public:
 		}							//osea supuestamente aca ya inicialicé mi lista
 	};
 	~cListaVuelos();
-	bool Agregar(cVuelo* _vuelo);//retrona true si se agregó con éxito
+	bool AgregarPasajero(); //agrega un pasajero a la lista de vuelos
+	void CambiarPasajero();//modifica el pasajero
+	bool EliminarPasajero(); //elimina el pasajero a la lista de vuelo
 };

@@ -31,11 +31,7 @@ public:
 	}
 	void ObtenerDatosPasajero(const string _DNI);//Busca el pasajero a partir del DNI
 	float setpesototal();//devuelve el peso total con un contador de las valijas del pasajero y cada pasajero
-	/*
-	bool AgregarPasajero(); //agrega un pasajero a la lista de vuelos
-	void CambiarPasajero();//modifica el pasajero
-	bool EliminarPasajero(); //elimina el pasajero a la lista de vuelo
-	*/
+
 	string to_string();
 	void imprimir();
 };
