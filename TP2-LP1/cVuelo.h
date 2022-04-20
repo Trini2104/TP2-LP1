@@ -3,6 +3,7 @@
 #include "cAvion.h"
 #include "cFecha.h"
 #include "cAeropuerto.h"
+#include "cPasajero.h"
 #include <iostream>
 #include <string>
 using namespace std;
@@ -15,8 +16,8 @@ private:
 	//cAvion* avion;
 	tipovuelo TipoVuelo; 
 	cFecha* fechayhoraReal; //fecha y hora con la que llego y salió realmente
-	//cAeropuerto* aeropuertoDestino;
-	//cPasajero* Pasajero;
+	cAeropuerto* aeropuertoDestino;
+	cPasajero* Pasajero;
 	float PesoTotal;
 	//agregar lista equipaje
 public:

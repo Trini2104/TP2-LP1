@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClInclude Include="cAeropuerto.h" />
     <ClInclude Include="cAvion.h" />
+    <ClInclude Include="cEquipaje.h" />
     <ClInclude Include="cFecha.h" />
     <ClInclude Include="cPasajero.h" />
     <ClInclude Include="cVuelo.h" />

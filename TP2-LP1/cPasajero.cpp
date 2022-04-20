@@ -1,18 +1,17 @@
 #include<iostream>
 #include<string>
 #include"cPasajero.h"
-
 using namespace std;
-
-cPasajero::cPasajero()
+cPasajero::cPasajero(const string _DNI, const string _nombre, const string _apellido, string _NumVuelo, cFecha* _FechaVuelo, int _NumAsiento, cEquipaje* _equipaje)
 {
-	
+	this->NumAsiento = _NumAsiento;
+	this->NumVuelo = _NumVuelo;
 }
 cPasajero::~cPasajero() {};
 bool AgregarEquipaje() {
-	if (cantequipaje != 0)
+	if (cEquipaje::getCantidadDeEquipaje != 0)// get de la cantidad de eqipaje de la clase cequipaje 
 	{
-		if (< 25)
+		if (cEquipaje::getPesoDelEquipaje < 25)
 			return false;
 		else
 			return true;

@@ -2,10 +2,18 @@
 #include "cAvion.h"
 #include <iostream>
 #include <string>
+#include "cEquipaje.h"
 #define MAX 20
-class ListaAviones {
+class ListaAviones 
+{
+private:
 	cAvion** ListaAviones;
 	
 public: 
-	cListaAviones()
+};
+class ListEquipaje
+{
+private:
+	cEquipaje** ListaEquipaje;
+public:
 };
