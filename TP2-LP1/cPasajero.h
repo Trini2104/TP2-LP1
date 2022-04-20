@@ -29,6 +29,7 @@ public:
 		return DNI;
 	}
 	bool AgregarEquipaje();//chequea que el equipaje total no supere los 25kg p/persona
+
 	string to_string();
 	void imprimir();
 };
