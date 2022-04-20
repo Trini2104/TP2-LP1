@@ -10,8 +10,7 @@ cVuelo::cVuelo(int _numVuelo, estado _EstadoVuelo, tipovuelo _TipoVuelo, cFecha*
 }
 cVuelo::~cVuelo() {};
 
-//acá no se si agregar la función que genera el nro d vuelo automático o eso ponerlo en un Lista.cpp
-//se me había ocurrido hacer un contador d vuelos entoces cada vez q agregas 1 en la lista se suma 1 al contador y ahi tenes los nros automaticos 
+
 void ObtenerDatosPasajero(const string _DNI)
 {
 	if (cPasajero->getDNI() == _DNI)
