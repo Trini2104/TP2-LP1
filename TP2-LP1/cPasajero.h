@@ -9,7 +9,7 @@ class cPasajero
 {
 
 private:
-	const string DNI;
+	 string DNI;
 	const string nombre;
 	const string apellido;
 	string NumVuelo;
@@ -18,8 +18,8 @@ private:
 	cEquipaje* equipaje;
 	int CantidadDeEquipaje;
 	float pesoDeEquipaje;
-	int cantidadPasajeros;
-
+	static int cantidadPasajeros;
+	
 public:
 	cPasajero(const string _DNI, const string _nombre, const string _apellido, string _NumVuelo, cFecha* _FechaVuelo, string _NumAsiento, cEquipaje* _equipaje) 
 	{ 
@@ -40,7 +40,14 @@ public:
 	{
 		return cantidadPasajeros;
 	}
-	
+	int getCantidadPasajeroPermitido()
+	{
+		return cantidadPasajerosPermitidos;
+	}
+	void setCantidadPasajerosPermitidos(int longitud)
+	{
+		this->cantidadPasajerosPermitidos = longitud;
+	}
 	string to_string();
 	void imprimir();
 };

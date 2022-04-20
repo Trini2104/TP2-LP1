@@ -2,8 +2,9 @@
 #include<string>
 #include"cPasajero.h"
 using namespace std;
-cPasajero::cPasajero(const string _DNI, const string _nombre, const string _apellido, string _NumVuelo, cFecha* _FechaVuelo, string _NumAsiento, cEquipaje* _equipaje) : DNI(_DNI), nombre(_nombre), apellido(_apellido)
+cPasajero::cPasajero( string _DNI, const string _nombre, const string _apellido, string _NumVuelo, cFecha* _FechaVuelo, string _NumAsiento, cEquipaje* _equipaje) : nombre(_nombre), apellido(_apellido)
 {
+	this->DNI = _DNI;
 	this->NumAsiento = _NumAsiento;
 	this->NumVuelo = _NumVuelo;
 }
