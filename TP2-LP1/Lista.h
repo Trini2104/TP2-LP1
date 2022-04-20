@@ -12,7 +12,7 @@ private:
 	
 public: 
 };
-class ListEquipaje
+class ListaEquipaje
 {
 private:
 	cEquipaje** ListaEquipaje;
