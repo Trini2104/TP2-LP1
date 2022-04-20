@@ -32,6 +32,13 @@ public:
 		}							//osea supuestamente aca ya inicialicé mi lista
 	};
 	~cListaVuelos();
+	
+};
+class cListaPasajeros
+{
+private:
+	cPasajero** ListaPasajeros;
+public:
 	bool AgregarPasajero(); //agrega un pasajero a la lista de vuelos
 	void CambiarPasajero();//modifica el pasajero
 	bool EliminarPasajero(); //elimina el pasajero a la lista de vuelo
