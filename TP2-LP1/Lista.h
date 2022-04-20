@@ -23,8 +23,9 @@ class cListaVuelos
 private:
 	cVuelo** ListaVuelos;
 public:
-	cListaVuelos(int n = MAX) {
-		ListaVuelos = new cVuelo*[n];
+	cListaVuelos(int n = MAX) 
+	{
+		ListaVuelos = new cVuelo * [n];
 		for (int i = 0; i < n; i++)
 		{
 			ListaVuelos[i] = NULL; //a chequear no se si esta bien esto es lo q entendi d la clase y lo q copie
