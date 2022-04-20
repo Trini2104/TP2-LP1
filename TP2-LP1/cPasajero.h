@@ -14,14 +14,21 @@ private:
 	const string apellido;
 	string NumVuelo;
 	cFecha* FechaYHoraVuelo;//fecha supuesta
-	 int NumAsiento;
+	string NumAsiento;
 	cEquipaje* equipaje;
-	/*int CantidadDeEquipaje;
-	float pesoDeEquipaje;*/
+	int CantidadDeEquipaje;
+	float pesoDeEquipaje;
+	int cantidadPasajeros;
 
 public:
-	cPasajero(const string _DNI, const string _nombre, const string _apellido, string _NumVuelo, cFecha* _FechaVuelo, int _NumAsiento, cEquipaje* _equipaje) : DNI(_DNI), nombre(_nombre), apellido(_apellido) {};
-	~cPasajero();
+	cPasajero(const string _DNI, const string _nombre, const string _apellido, string _NumVuelo, cFecha* _FechaVuelo, string _NumAsiento, cEquipaje* _equipaje) 
+	{ 
+		cantidadPasajeros++; 
+	};
+	~cPasajero() 
+	{
+		cantidadPasajeros--;
+	};
 
 	//metodos:
 	const string getDNI()
@@ -29,7 +36,11 @@ public:
 		return DNI;
 	}
 	bool AgregarEquipaje();//chequea que el equipaje total no supere los 25kg p/persona
-
+	int getCantidadPasajero()
+	{
+		return cantidadPasajeros;
+	}
+	
 	string to_string();
 	void imprimir();
 };

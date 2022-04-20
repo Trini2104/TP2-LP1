@@ -146,13 +146,14 @@
     <ClInclude Include="cPasajero.h" />
     <ClInclude Include="cVuelo.h" />
     <ClInclude Include="Enums.h" />
-    <ClInclude Include="Lista.h" />
+    <ClInclude Include="Listas.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cAeropueto.cpp" />
     <ClCompile Include="cAvion.cpp" />
     <ClCompile Include="cPasajero.cpp" />
     <ClCompile Include="cVuelo.cpp" />
+    <ClCompile Include="Listas.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

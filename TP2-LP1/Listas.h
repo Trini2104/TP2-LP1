@@ -4,6 +4,7 @@
 #include <string>
 #include "cEquipaje.h"
 #include"cVuelo.h"
+#include "cPasajero.h"
 #define MAX 20
 class ListaAviones 
 {
@@ -18,19 +19,15 @@ private:
 	cEquipaje** ListaEquipaje;
 public:
 };
+
 class cListaVuelos
 {
 private:
+	bool eliminarNodos;
+
 	cVuelo** ListaVuelos;
 public:
-	cListaVuelos(int n = MAX) 
-	{
-		ListaVuelos = new cVuelo * [n];
-		for (int i = 0; i < n; i++)
-		{
-			ListaVuelos[i] = NULL; //a chequear no se si esta bien esto es lo q entendi d la clase y lo q copie
-		}							//osea supuestamente aca ya inicialicé mi lista
-	};
+	cListaVuelos(unsigned int longitud, bool eliminar){};
 	~cListaVuelos();
 	
 };
@@ -39,6 +36,8 @@ class cListaPasajeros
 private:
 	cPasajero** ListaPasajeros;
 public:
+	cListaPasajeros(int longitud, bool eliminar);
+	~cListaPasajeros();
 	bool AgregarPasajero(); //agrega un pasajero a la lista de vuelos
 	void CambiarPasajero();//modifica el pasajero
 	bool EliminarPasajero(); //elimina el pasajero a la lista de vuelo

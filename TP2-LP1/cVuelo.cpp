@@ -2,7 +2,7 @@
 #include<string>
 #include "cVuelo.h"
 using namespace std;
-cVuelo::cVuelo(int _numVuelo, estado _EstadoVuelo, tipovuelo _TipoVuelo, cFecha* _fechayhora)
+cVuelo::cVuelo(int _numVuelo, estado _EstadoVuelo, tipovuelo _TipoVuelo, cFecha* _fechayhora, int _CantidadVuelos)
 {
 	this->NumVuelo = _numVuelo;
 	this->EstadoVuelo = _EstadoVuelo;
@@ -11,9 +11,9 @@ cVuelo::cVuelo(int _numVuelo, estado _EstadoVuelo, tipovuelo _TipoVuelo, cFecha*
 cVuelo::~cVuelo() {};
 
 
-void ObtenerDatosPasajero(const string _DNI)
+void cVuelo::ObtenerDatosPasajero(const string _DNI)
 {
-	if (cPasajero->getDNI() == _DNI)
+	if (pasajero->getDNI() == _DNI)
 	{
 		// si el dni coincide, imprimo sus datos
 	}

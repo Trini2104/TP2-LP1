@@ -14,7 +14,7 @@ private:
 	//lista de aviones
 
 public:
-	cAeropuerto(const string _ID, const int _CapacidadDeAeropuerto): ID(_ID), CapacidadDeAeropuerto(_CapacidadDeAeropuerto) {};
+	cAeropuerto(const string _ID, const int _CapacidadDeAeropuerto);
 	~cAeropuerto();
 
 	bool DarPermiso(); // da o no da el permiso segun la disponibilidad del hangar; 
