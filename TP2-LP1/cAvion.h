@@ -22,7 +22,7 @@ public:
 
 	float PesoDelAvion();
 
-	void ChecqueraCargaMaxima(); //verifica que no supere el peso
+	void ChequeraCargaMaxima(); //verifica que no supere el peso
 	void AntesDeSalirDelAeropuerto(); //verifica que se cumplan la CantidadPasajerosPermitidos y PesoMaxTotal
 	
 	const int getCantidadPasajerosPermitidos()

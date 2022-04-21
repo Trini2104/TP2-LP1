@@ -5,9 +5,9 @@ using namespace std;
 class cEquipaje
 {
 private:
-	int cant;
-	float peso;
-	const string DNIdueño; // asociamos el equipaje por dni
+	int cant = 0;
+	float peso = 0;
+	const string DNIduenio; // asociamos el equipaje por dni
 public:
 	cEquipaje(int _cant, int _peso, const string _DNIdueño)
 	{
@@ -26,4 +26,8 @@ public:
 	{
 		return peso;
 	};
+	const string getDNIduenio()
+	{
+		return DNIduenio;
+	}
 };

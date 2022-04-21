@@ -14,6 +14,7 @@ private:
 	unsigned int capacidad;
 public: 
 	cListaAviones(unsigned int longitud = MAX);
+	bool AgregarAvion(cAvion* _avion);
 	~cListaAviones();
 };
 class cListaEquipaje
@@ -24,6 +25,9 @@ private:
 	unsigned int capacidad;
 public:
 	cListaEquipaje(unsigned int longitud = MAX);
+	bool AgregarEquipaje(cEquipaje* _equipaje);
+	bool EliminarEquipaje(const string _DNIduenio);
+	void ordenar();
 	~cListaEquipaje();
 
 };
@@ -31,11 +35,12 @@ public:
 class cListaVuelos
 {
 private:
-	cPasajero** ListaVuelos;
+	cVuelo** ListaVuelos;
 	unsigned int ocupados;
 	unsigned int capacidad;
 public:
 	cListaVuelos(unsigned int longitud = MAX);
+	bool AgregarVuelo(cVuelo* _vuelo);
 	~cListaVuelos();
 
 	
