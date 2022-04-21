@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include "cEquipaje.h"
+#include"Listas.h"
 using namespace std;
 
 class cPasajero 
@@ -15,11 +16,8 @@ private:
 	string NumVuelo;
 	cFecha* FechaYHoraVuelo;//fecha supuesta
 	string NumAsiento;
-	cEquipaje* equipaje;
-	int CantidadDeEquipaje;
-	float pesoDeEquipaje;
 	static int cantidadPasajeros;
-	
+	cListaEquipaje* equipajePasajeros;
 public:
 	cPasajero(const string _DNI, const string _nombre, const string _apellido, string _NumVuelo, cFecha* _FechaVuelo, string _NumAsiento, cEquipaje* _equipaje) 
 	{ 
@@ -39,14 +37,6 @@ public:
 	int getCantidadPasajero()
 	{
 		return cantidadPasajeros;
-	}
-	int getCantidadPasajeroPermitido()
-	{
-		return cantidadPasajerosPermitidos;
-	}
-	void setCantidadPasajerosPermitidos(int longitud)
-	{
-		this->cantidadPasajerosPermitidos = longitud;
 	}
 	string to_string();
 	void imprimir();

@@ -17,3 +17,12 @@ float cAvion::PesoDelAvion()
 	float contador = PesosPasajeros + PesoEquipaje;
 	return contador;
 }
+void cAvion::ChequearCargaMaxima(cAvion*avion)
+{
+	int cont = 0;
+	cont = (avion->getCantidadActualDePasajeros()+4) * 75;
+	for (int i = 0; i < avion->getCantidadActualDePasajeros(); i++)
+	{
+		//tenemos que entrar a la lista de equipaje de cada pasajero y sumar el peso de cada uno
+	}
+}

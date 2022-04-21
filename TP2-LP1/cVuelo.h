@@ -4,6 +4,7 @@
 #include "cFecha.h"
 #include "cAeropuerto.h"
 #include "cPasajero.h"
+#include"Listas.h"
 #include <iostream>
 #include <string>
 using namespace std;
@@ -23,6 +24,7 @@ private:
 	float PesoTotal;
 	unsigned int CantidadVuelos = 0;
 	//agregar lista equipaje
+	cListaEquipaje* EquipajeVuelo;//PREGUNTAR SI ES PUNTERO O VARIABLE COMUN
 public:
 	cVuelo(int _numVuelo, estado _EstadoVuelo, tipovuelo _TipoVuelo, cFecha* _fechayhora, int _CantidadVuelos){};//agregar todos los punteros
 	~cVuelo();
