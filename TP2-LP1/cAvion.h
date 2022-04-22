@@ -16,7 +16,7 @@ private:
 	static int cantidad;
 	cPasajero* pasajero;
 	cVuelo* vuelo;
-
+	friend class cListas;
 public:
 	cAvion(const string _ID, const int _CantidadPasajerosPermitidos, int _CantidadActualDePasajeros, const float _PesoMaxTotal, int _cantidad, estado _EstadoVuelo);
 	~cAvion();
@@ -26,6 +26,7 @@ public:
 	void ChequearCargaMaxima(cAvion* avion); //verifica que no supere el peso
 	void AntesDeSalirDelAeropuerto(); //verifica que se cumplan la CantidadPasajerosPermitidos y PesoMaxTotal
 	
+
 	const int getCantidadPasajerosPermitidos()
 	{
 		return CantidadPasajerosPermitidos;

@@ -57,7 +57,18 @@ public:
 	bool AgregarPasajero(cPasajero* _pasajero); //agrega un pasajero a la lista de vuelos
 	void CambiarPasajero( string _DNIPasajero, cPasajero* PasajeroNuevo);//modifica el pasajero
 	bool EliminarPasajero (string _DNIPasajero); //elimina el pasajero a la lista de vuelo
-
+	unsigned int getocupados()
+	{
+		return ocupados;
+	}
+	unsigned int getcapacidad()
+	{
+		return capacidad;
+	}
+	cPasajero* getListaPasajeros(int i)
+	{
+		return ListaPasajeros[i];
+	}
 	void ordenar();
 
 };

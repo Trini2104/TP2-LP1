@@ -19,7 +19,7 @@ private:
 	tipovuelo TipoVuelo; 
 	cFecha* fechayhoraReal; //fecha y hora con la que llego y salió realmente
 	cAeropuerto* aeropuertoDestino;
-	cListaPasajeros * pasajeros;
+	cListaPasajeros*  pasajeros;
 	float PesoTotal;
 	unsigned int CantidadVuelos = 0;
 	cListaEquipaje* EquipajeVuelo;
@@ -43,7 +43,7 @@ public:
 	}
 	void ObtenerDatosPasajero(const string _DNI);//Busca el pasajero a partir del DNI
 	float setpesototal();//devuelve el peso total con un contador de las valijas del pasajero y cada pasajero
-
+	float getpesototaldelequipaje(string _DNI);
 	string to_string();
 	void imprimir();
 };

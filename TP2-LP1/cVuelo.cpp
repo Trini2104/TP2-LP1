@@ -13,9 +13,21 @@ cVuelo::~cVuelo() {};
 
 void cVuelo::ObtenerDatosPasajero(const string _DNI)
 {
-	if (pasajero->getDNI() == _DNI)
+	if (pasajeros->getDNI() == _DNI)
 	{
 		// si el dni coincide, imprimo sus datos
+	}
+	
+}
+
+float cVuelo::getpesototaldelequipaje(string _DNI)
+{
+	int cantidadPasajeros = pasajeros->getocupados();
+	int cantidadTotal = pasajeros->getcapacidad();
+	
+	for (int i = 0; i < cantidadPasajeros; i++)
+	{
+	
 	}
 	
 }

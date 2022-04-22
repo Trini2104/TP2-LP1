@@ -20,6 +20,6 @@ void cAvion::ChequearCargaMaxima(cAvion*avion)
 	cont = (avion->getCantidadActualDePasajeros()+4) * 75;
 	for (int i = 0; i < avion->getCantidadActualDePasajeros(); i++)
 	{
-		this->vuelo->getlistapasajeros()[i].;
+		this->
 	}
 }
