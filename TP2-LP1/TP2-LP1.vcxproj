@@ -143,6 +143,10 @@
     <ClInclude Include="cAvion.h" />
     <ClInclude Include="cEquipaje.h" />
     <ClInclude Include="cFecha.h" />
+    <ClInclude Include="cListaAviones.h" />
+    <ClInclude Include="cListaEquipaje.h" />
+    <ClInclude Include="cListaPasajeros.h" />
+    <ClInclude Include="cListaVuelos.h" />
     <ClInclude Include="cPasajero.h" />
     <ClInclude Include="cVuelo.h" />
     <ClInclude Include="Enums.h" />
