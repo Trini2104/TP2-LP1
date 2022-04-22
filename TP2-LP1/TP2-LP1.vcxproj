@@ -149,7 +149,7 @@
     <ClInclude Include="Listas.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="cAeropueto.cpp" />
+    <ClCompile Include="cAeropuerto.cpp" />
     <ClCompile Include="cAvion.cpp" />
     <ClCompile Include="cPasajero.cpp" />
     <ClCompile Include="cVuelo.cpp" />

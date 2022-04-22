@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
-
+class cVuelo;
 class cAvion 
 {
 private:
@@ -15,6 +15,7 @@ private:
 	estado EstadoVuelo;
 	static int cantidad;
 	cPasajero* pasajero;
+	cVuelo* vuelo;
 
 public:
 	cAvion(const string _ID, const int _CantidadPasajerosPermitidos, int _CantidadActualDePasajeros, const float _PesoMaxTotal, int _cantidad, estado _EstadoVuelo);

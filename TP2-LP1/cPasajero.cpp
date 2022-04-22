@@ -11,9 +11,9 @@ cPasajero::cPasajero( string _DNI, const string _nombre, const string _apellido,
 cPasajero::~cPasajero() {};
 bool cPasajero:: AgregarEquipaje()
 {
-	if (equipaje->getCantidadDeEquipaje() != 0)// get de la cantidad de eqipaje de la clase cequipaje 
+	if (equipajePasajeros->getCantidadDeEquipaje() != 0)// get de la cantidad de eqipaje de la clase cequipaje 
 	{
-		if (equipaje->getPesoDelEquipaje() < 25)
+		if (equipajePasajeros->getPesoDelEquipaje() < 25)// hacerlos en la lista para poder entrar o entrarlo desde la clase
 			return false;
 		else
 			return true;
@@ -21,6 +21,13 @@ bool cPasajero:: AgregarEquipaje()
 else
 return true;
 };
+float cPasajero::getpesototaldelequipaje(string _DNI)
+{//probarlo en vuelo con un for metiendonnos en cada sub i
+	for( int i=0; i< cantidadPasajeros;i++)
+	{
+		equipajePasajeros->// meternos desde el dni que esta en el equipaje con el dni del pasajero
+	}
+}
 string cPasajero::to_string()
 {
 	return

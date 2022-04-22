@@ -38,6 +38,7 @@ public:
 	{
 		return cantidadPasajeros;
 	}
+	float getpesototaldelequipaje(string _DNI);
 	string to_string();
 	void imprimir();
 };
