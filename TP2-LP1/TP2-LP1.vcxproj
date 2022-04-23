@@ -150,14 +150,16 @@
     <ClInclude Include="cPasajero.h" />
     <ClInclude Include="cVuelo.h" />
     <ClInclude Include="Enums.h" />
-    <ClInclude Include="Listas.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cAeropuerto.cpp" />
     <ClCompile Include="cAvion.cpp" />
+    <ClCompile Include="cListaAviones.cpp" />
+    <ClCompile Include="cListaPasajeros.cpp" />
+    <ClCompile Include="cListaVuelos.cpp" />
     <ClCompile Include="cPasajero.cpp" />
     <ClCompile Include="cVuelo.cpp" />
-    <ClCompile Include="Listas.cpp" />
+    <ClCompile Include="cListaEquipaje.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

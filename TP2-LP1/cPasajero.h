@@ -3,7 +3,7 @@
 #include <iostream>
 #include <string>
 #include "cEquipaje.h"
-#include"Listas.h"
+#include"cListaEquipaje.h"
 using namespace std;
 
 class cPasajero 
@@ -33,11 +33,13 @@ public:
 	{
 		return DNI;
 	}
+	float getpesototaldelequipaje(string _DNI);
 	bool AgregarEquipaje();//chequea que el equipaje total no supere los 25kg p/persona
 	int getCantidadPasajero()
 	{
 		return cantidadPasajeros;
 	}
+	int Pesoequipaje();
 	
 	string to_string();
 	void imprimir();

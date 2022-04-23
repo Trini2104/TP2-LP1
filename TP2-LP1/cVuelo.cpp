@@ -26,7 +26,7 @@ float cVuelo::getpesototaldelequipaje(string _DNI)
 	int cantidadTotal = pasajeros->getcapacidad();
 	
 	for (int i = 0; i < cantidadPasajeros; i++)
-	{
+	{ this->getlistapasajeros()
 	
 	}
 	

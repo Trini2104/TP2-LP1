@@ -4,7 +4,7 @@
 #include "cFecha.h"
 #include "cAeropuerto.h"
 #include "cPasajero.h"
-#include"Listas.h"
+#include"cListaPasajeros.h"
 #include <iostream>
 #include <string>
 using namespace std;

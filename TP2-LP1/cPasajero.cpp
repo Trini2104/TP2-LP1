@@ -25,9 +25,10 @@ float cPasajero::getpesototaldelequipaje(string _DNI)
 {//probarlo en vuelo con un for metiendonnos en cada sub i
 	for( int i=0; i< cantidadPasajeros;i++)
 	{
-		equipajePasajeros->// meternos desde el dni que esta en el equipaje con el dni del pasajero
+		this->equipajePasajeros->// meternos desde el dni que esta en el equipaje con el dni del pasajero
 	}
 }
+
 string cPasajero::to_string()
 {
 	return

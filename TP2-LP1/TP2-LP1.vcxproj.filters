@@ -33,9 +33,6 @@
     <ClInclude Include="Enums.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Listas.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="cEquipaje.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
@@ -65,7 +62,16 @@
     <ClCompile Include="cVuelo.cpp">
       <Filter>Archivos de recursos</Filter>
     </ClCompile>
-    <ClCompile Include="Listas.cpp">
+    <ClCompile Include="cListaEquipaje.cpp">
+      <Filter>Archivos de recursos</Filter>
+    </ClCompile>
+    <ClCompile Include="cListaAviones.cpp">
+      <Filter>Archivos de recursos</Filter>
+    </ClCompile>
+    <ClCompile Include="cListaPasajeros.cpp">
+      <Filter>Archivos de recursos</Filter>
+    </ClCompile>
+    <ClCompile Include="cListaVuelos.cpp">
       <Filter>Archivos de recursos</Filter>
     </ClCompile>
   </ItemGroup>
