@@ -36,21 +36,12 @@ void cListaPasajeros::ordenar()
 		}
 	}
 }
-bool cListaPasajeros::AgregarPasajero(cPasajero* _pasajero)
-{
-	if (ocupados >= capacidad)
-	{
-		return false;
-	}//si la cantidad de pasajeros es mayor a la cantidad de pasajeros permitidos falsos
-	this->ListaPasajeros[ocupados] = _pasajero;
-	ocupados++;
-	return true;
-}
+
 void cListaPasajeros::CambiarPasajero(string _DNIPasajero, cPasajero* PasajeroNuevo)
 {
 	for (int i = 0; i < capacidad; i++)
 	{
-		if (this->ListaPasajeros == NULL && this->ListaPasajeros[i]->getDNI() == _DNIPasajero)
+		if (this->ListaPasajeros != NULL && this->ListaPasajeros[i]->getDNI() == _DNIPasajero)
 		{
 			cPasajero* aux = ListaPasajeros[i];
 			ListaPasajeros[i] = PasajeroNuevo;

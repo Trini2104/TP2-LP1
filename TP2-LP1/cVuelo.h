@@ -13,37 +13,44 @@ unsigned int CantidadVuelos = 0;
 class cVuelo
 {
 private:
-	static int NumVuelo; 
-	estado EstadoVuelo;
-	//cAvion* avion;
-	tipovuelo TipoVuelo; 
+	string  NumVuelo; //propio
+	estado EstadoVuelo; //esta en enum
+	cAvion* avion;//en el que se lleva ese vuelo
+	tipovuelo TipoVuelo;//partida o arribo
 	cFecha* fechayhoraReal; //fecha y hora con la que llego y salió realmente
 	cAeropuerto* aeropuertoDestino;
-	cListaPasajeros*  pasajeros;
-	float PesoTotal;
-	unsigned int CantidadVuelos = 0;
-	cListaEquipaje* EquipajeVuelo;
+	cListaPasajeros* ListaPasajeros;//pasajeros del vuelo
+	static int CantidadVuelos;
+	cListaEquipaje* ListaEquipajeVuelo;//equipaje del vuelo
+	friend class cLIstaVuelos;
 public:
-	cVuelo(int _numVuelo, estado _EstadoVuelo, tipovuelo _TipoVuelo, cFecha* _fechayhora, int _CantidadVuelos){};//agregar todos los punteros
-	~cVuelo();
-	
-	
+	cVuelo(string _numVuelo, estado _EstadoVuelo, tipovuelo _TipoVuelo)
+	{
+		CantidadVuelos++;
+
+	};//agregar todos los punteros
+	~cVuelo()
+	{
+		CantidadVuelos--;
+	}
+
+
 	void setCantidadVuelos(int longitud)
 	{
 		this->CantidadVuelos = longitud;
 	}
-	int setNumeroVuelo(int _NumVuelo)
+	string NumeroDeVueloRandom();
+	void  setNumeroVuelo(string _numVuelo)
 	{
-		_NumVuelo = rand() % 1001;
-		this->NumVuelo = _NumVuelo;
-	}
+		this->NumVuelo = _numVuelo;
+	};
 	cListaPasajeros* getlistapasajeros()
 	{
-		return pasajeros;
+		return ListaPasajeros;
 	}
-	void ObtenerDatosPasajero(const string _DNI);//Busca el pasajero a partir del DNI
+	string ObtenerDatosPasajero(const string _DNI);//Busca el pasajero a partir del DNI
 	float setpesototal();//devuelve el peso total con un contador de las valijas del pasajero y cada pasajero
-	float getpesototaldelequipaje(string _DNI);
+	float pesototaldelvuelo();
 	string to_string();
 	void imprimir();
 };

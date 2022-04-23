@@ -13,6 +13,15 @@ public:
 	cListaEquipaje(unsigned int longitud = MAX);
 	bool AgregarEquipaje(cEquipaje* _equipaje);
 	bool EliminarEquipaje(const string _DNIduenio);
+	float PesoTotalEquipaje();
+	unsigned int getocupados()
+	{
+		return ocupados;
+	}
+	cEquipaje** getListaEquipaje()
+	{
+		return ListaEquipaje;
+	}
 	void ordenar();
 	~cListaEquipaje();
 

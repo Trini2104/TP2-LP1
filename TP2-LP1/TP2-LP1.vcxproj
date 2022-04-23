@@ -154,6 +154,7 @@
   <ItemGroup>
     <ClCompile Include="cAeropuerto.cpp" />
     <ClCompile Include="cAvion.cpp" />
+    <ClCompile Include="cEquipaje.cpp" />
     <ClCompile Include="cListaAviones.cpp" />
     <ClCompile Include="cListaPasajeros.cpp" />
     <ClCompile Include="cListaVuelos.cpp" />

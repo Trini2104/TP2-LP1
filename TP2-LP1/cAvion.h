@@ -4,28 +4,33 @@
 #include <iostream>
 #include <string>
 using namespace std;
-class cVuelo;
-class cAvion 
+class cAvion
 {
 private:
-	const string ID;
+	const string IDAvion; //del avion
 	const int CantidadPasajerosPermitidos;
 	int CantidadActualDePasajeros;
 	const float PesoMaxTotal;
-	estado EstadoVuelo;
-	static int cantidad;
-	cPasajero* pasajero;
-	cVuelo* vuelo;
-	friend class cListas;
+	float PesoReal;
+	static int cantidadAviones;
+	estado EstadoVuelo; //despegue, aterriza, pedir permiso, recibir permiso
+	friend class cListaAviones;
 public:
-	cAvion(const string _ID, const int _CantidadPasajerosPermitidos, int _CantidadActualDePasajeros, const float _PesoMaxTotal, int _cantidad, estado _EstadoVuelo);
-	~cAvion();
+	cAvion(string _IDAvion, int _CantidadPasajerosPermitidos, int _CantidadActualDePasajeros, float _PesoMaxTotal, estado _EstadoVuelo)
+	{
+		cantidadAviones++;
+	};
+	~cAvion()
+	{
+		cantidadAviones--;
+	};
 
 	float PesoDelAvion();
 
 	void ChequearCargaMaxima(cAvion* avion); //verifica que no supere el peso
 	void AntesDeSalirDelAeropuerto(); //verifica que se cumplan la CantidadPasajerosPermitidos y PesoMaxTotal
-	
+
+	void setEstadoVuelo(estado _estadovuelo);
 
 	const int getCantidadPasajerosPermitidos()
 	{
@@ -34,6 +39,12 @@ public:
 	const int getCantidadActualDePasajeros()
 	{
 		return CantidadActualDePasajeros;
+	}
+	void setPesoReaal(float _peso);
+
+	estado getEstadoVuelo()
+	{
+		return EstadoVuelo;
 	}
 	string to_string();
 	void imprimir();

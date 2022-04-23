@@ -10,13 +10,47 @@ cListaEquipaje::cListaEquipaje(unsigned int longitud)
 		this->ListaEquipaje[i] = NULL;
 	ocupados = 0;
 }
+cListaEquipaje::~cListaEquipaje()
+{
+	for (int i = 0; i < capacidad; i++)
+	{
+		if (this->ListaEquipaje[i] != NULL)
+			delete ListaEquipaje[i];
+	}
+	delete[]this->ListaEquipaje;
+	capacidad = 0;
+}
+void cListaEquipaje::ordenar()
+{//quita espacios en blanco en la lista
+	for (int i = 0; i < capacidad; i++)
+	{
+		int cont = 0;
+		for (int j = 0; j < capacidad - 1; j++)
+		{
+			if (this->ListaEquipaje[j] == NULL)
+			{
+				cEquipaje* aux = this->ListaEquipaje[j];
+				this->ListaEquipaje[j] = this->ListaEquipaje[j + 1];
+				this->ListaEquipaje[j + 1] = aux;
+				cont++;
+			}
+		}if (cont == 0)
+			break;
+	}
+}
 bool cListaEquipaje::AgregarEquipaje(cEquipaje* _equipaje)
 {
+	ordenar();
 	if (ocupados >= capacidad)
+	{
 		return false;
-	this->ListaEquipaje[ocupados] = _equipaje;
-	ocupados++;
-	return true;
+	}
+	else
+	{
+		this->ListaEquipaje[ocupados] = _equipaje;
+		ocupados++;
+		return true;
+	}
 
 }
 bool cListaEquipaje::EliminarEquipaje(const string _DNIduenio)
@@ -37,31 +71,15 @@ bool cListaEquipaje::EliminarEquipaje(const string _DNIduenio)
 		}
 	}
 }
-void cListaEquipaje::ordenar()
-{//quita espacios en blanco en la lista
-	for (int i = 0; i < capacidad; i++)
-	{
-		int cont = 0;
-		for (int j = 0; j < capacidad - 1; j++)
-		{
-			if (this->ListaEquipaje[j] == NULL)
-			{
-				cEquipaje* aux = this->ListaEquipaje[j];
-				this->ListaEquipaje[j] = this->ListaEquipaje[j + 1];
-				this->ListaEquipaje[j + 1] = aux;
-				cont++;
-			}
-		}if (cont == 0)
-			break;
-	}
-}
-cListaEquipaje::~cListaEquipaje()
+
+
+
+float cListaEquipaje::PesoTotalEquipaje()
 {
-	for (int i = 0; i < capacidad; i++)
+	float contador = 0;
+	for (int i = 0; i < ocupados; i++)
 	{
-		if (this->ListaEquipaje[i] != NULL)
-			delete ListaEquipaje[i];
+		contador = contador + ListaEquipaje[i]->getPesoDelEquipaje();
 	}
-	delete[]this->ListaEquipaje;
-	capacidad = 0;
+	return  contador;
 }

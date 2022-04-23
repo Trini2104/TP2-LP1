@@ -5,22 +5,23 @@ using namespace std;
 class cEquipaje
 {
 private:
-	int cant = 0;
+	static int CantidadEquipajes;
 	float peso = 0;
 	const string DNIduenio; // asociamos el equipaje por dni
+	friend class cListaEquipaje;
 public:
-	cEquipaje(int _cant, int _peso, const string _DNIdueño)
+	cEquipaje(float _peso, string _DNIduenio)
 	{
-		cant++; // sumo 1 a la cantidad de equipaje
+		CantidadEquipajes++; // sumo 1 a la cantidad de equipaje
 	} // constructor
-	~cEquipaje() 
+	~cEquipaje()
 	{
-		cant--;
+		CantidadEquipajes--;
 	}; // destructor
 	 // getters y setters
 	int getCantidadDeEquipaje()
 	{
-		return cant;
+		return CantidadEquipajes;
 	};
 	float getPesoDelEquipaje()
 	{
@@ -30,4 +31,5 @@ public:
 	{
 		return DNIduenio;
 	}
+
 };

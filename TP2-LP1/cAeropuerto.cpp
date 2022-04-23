@@ -3,6 +3,34 @@
 #include"cAeropuerto.h"
 
 using namespace std;
-cAeropuerto::cAeropuerto(const string ID, const int _CapacidadDeAeropuerto) : ID(_ID), CapacidadDeAeropuerto(_CapacidadDeAeropuerto);
+cAeropuerto::cAeropuerto(string _IDAeropuerto, int _CapacidadDeAeropuerto) :IDAeropuerto(_IDAeropuerto), CapacidadDeAeropuerto(_CapacidadDeAeropuerto)
+{
+	Avion = NULL;
+	ListaVuelos = NULL;
+	ListaAviones = NULL;
+};
 
 cAeropuerto::~cAeropuerto() {};
+
+bool cAeropuerto::DarPermiso()
+{
+	if (ListaAviones->getOcupados() > getCapacidadAeropuerto())
+	{
+		Avion->setEstadoVuelo(NoRecibiendoPermisoParaAterrizar);
+		return false;
+	}
+	else
+	{
+		Avion->setEstadoVuelo(RecibiendoPermisoParaAterrizar);
+		//ListaAviones->AgregarAvion(Avion);
+		return true;
+	}
+}
+bool cAeropuerto::Aterrizaje()
+{
+	if (Avion->getEstadoVuelo() == RecibiendoPermisoParaAterrizar)
+	{
+		ListaAviones->AgregarAvion(Avion);
+		Avion->setEstadoVuelo(Aterrizando);
+	}
+}

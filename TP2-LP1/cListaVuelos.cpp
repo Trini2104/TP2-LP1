@@ -21,9 +21,6 @@ bool cListaVuelos::AgregarVuelo(cVuelo* _vuelo)
 	ocupados++;
 	return true;
 }
-float cListaVuelos::CantidadTotalEquipajeVuelo() {
-
-}
 cListaVuelos::~cListaVuelos()
 {
 	for (int i = 0; i < capacidad; i++)

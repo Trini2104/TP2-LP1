@@ -12,7 +12,6 @@ private:
 public:
 	cListaVuelos(unsigned int longitud = MAX);
 	bool AgregarVuelo(cVuelo* _vuelo);
-	float CantidadTotalEquipajeVuelo();
 	~cListaVuelos();
 
 

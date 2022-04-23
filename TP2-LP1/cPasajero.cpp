@@ -2,32 +2,37 @@
 #include<string>
 #include"cPasajero.h"
 using namespace std;
-cPasajero::cPasajero( string _DNI, const string _nombre, const string _apellido, string _NumVuelo, cFecha* _FechaVuelo, string _NumAsiento, cEquipaje* _equipaje) : nombre(_nombre), apellido(_apellido)
+cPasajero::cPasajero(string _DNI, string _nombre, string _apellido, string _NumVuelo, string _NumAsiento) : DNI(_DNI), nombre(_nombre), apellido(_apellido)
 {
-	this->DNI = _DNI;
+
 	this->NumAsiento = _NumAsiento;
 	this->NumVuelo = _NumVuelo;
-}
-cPasajero::~cPasajero() {};
-bool cPasajero:: AgregarEquipaje()
-{
-	if (equipajePasajeros->getCantidadDeEquipaje() != 0)// get de la cantidad de eqipaje de la clase cequipaje 
-	{
-		if (equipajePasajeros->getPesoDelEquipaje() < 25)// hacerlos en la lista para poder entrar o entrarlo desde la clase
-			return false;
-		else
-			return true;
-	}
-else
-return true;
+	equipaje = NULL;
+	FechaYHoraVuelo = NULL;
+	ListaeValijasATransportar = NULL;
 };
-float cPasajero::getpesototaldelequipaje(string _DNI)
-{//probarlo en vuelo con un for metiendonnos en cada sub i
-	for( int i=0; i< cantidadPasajeros;i++)
+cPasajero::~cPasajero() {};
+int cPasajero::cantidadPasajeros = 0;
+
+bool cPasajero::AgregarEquipaje(cEquipaje* _equipaje)
+{
+	if (ListaeValijasATransportar->PesoTotalEquipaje() + _equipaje->getPesoDelEquipaje() < 25)
 	{
-		this->equipajePasajeros->// meternos desde el dni que esta en el equipaje con el dni del pasajero
+		ListaeValijasATransportar->AgregarEquipaje(_equipaje);
+		return true;
 	}
+	else
+	{
+		return false;
+	}
+};
+
+unsigned int cPasajero::getEquipaje()
+{
+	return ListaeValijasATransportar->getocupados();
 }
+
+
 
 string cPasajero::to_string()
 {
@@ -37,7 +42,7 @@ string cPasajero::to_string()
 		"DNI: " + DNI + "\n" +
 		"Numero de vuelo: " + NumVuelo + "\n" +
 		"Numero de asiento: " + NumAsiento + "\n";
-		//"Cantidad y peso del equipaje: " + equipaje + "\n";
+	//"Cantidad y peso del equipaje: " + equipaje + "\n";
 
 }
 void imprimir();
