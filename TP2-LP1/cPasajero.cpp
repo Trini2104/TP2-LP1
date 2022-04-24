@@ -16,7 +16,7 @@ int cPasajero::cantidadPasajeros = 0;
 
 bool cPasajero::AgregarEquipaje(cEquipaje* _equipaje)
 {
-	if (ListaeValijasATransportar->PesoTotalEquipaje() + _equipaje->getPesoDelEquipaje() < 25)
+	if (ListaeValijasATransportar->PesoTotalEquipaje() + _equipaje->getPesoDelEquipaje() < 25) //si la suma de todo su equipaje mas el que desea agregar es menor a todo su equipaje puede agregarlo
 	{
 		ListaeValijasATransportar->AgregarEquipaje(_equipaje);
 		return true;

@@ -29,8 +29,8 @@ public:
 
 	bool ChequearCargaMaxima(); //verifica que no supere el peso
 	bool AntesDeSalirDelAeropuerto(); //verifica que se cumplan la CantidadPasajerosPermitidos y PesoMaxTotal
-	bool Despegar();
-	void setEstadoVuelo(estado _estadovuelo);
+	bool Despegar(); //Cambia el estado del avion
+	void setEstadoVuelo(estado _estadovuelo); 
 
 	const int getCantidadPasajerosPermitidos()
 	{

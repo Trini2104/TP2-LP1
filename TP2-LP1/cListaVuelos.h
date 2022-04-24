@@ -11,8 +11,18 @@ private:
 	unsigned int capacidad;
 public:
 	cListaVuelos(unsigned int longitud = MAX);
-	bool AgregarVuelo(cVuelo* _vuelo);
 	~cListaVuelos();
+	unsigned int getocupados()
+	{
+		return ocupados;
+	}
+	cVuelo* getListaVuelos(int i)
+	{
+		return ListaVuelos[i];
+	}
+	bool AgregarVuelo(cVuelo* _vuelo);
+
+	
 
 
 };

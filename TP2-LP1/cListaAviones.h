@@ -15,7 +15,7 @@ public:
 	bool AgregarAvion(cAvion* _avion);
 	bool EliminarAvion(cAvion* _avion);
 	void Ordenar();
-	cAvion* getListaAviones(int i)
+	cAvion* getListaAviones(int i) //me permite ingresar a la lista de aviones
 	{
 		return ListaAviones[i];
 	}

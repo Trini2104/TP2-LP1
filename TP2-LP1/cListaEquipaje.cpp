@@ -79,7 +79,7 @@ float cListaEquipaje::PesoTotalEquipaje()
 	float contador = 0;
 	for (int i = 0; i < ocupados; i++)
 	{
-		contador = contador + ListaEquipaje[i]->getPesoDelEquipaje();
+		contador = contador + ListaEquipaje[i]->getPesoDelEquipaje();//ingreso a cada equipaje de mi lista y sumo su peso
 	}
 	return  contador;
 }

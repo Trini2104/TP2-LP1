@@ -10,13 +10,13 @@ class cListaPasajeros
 {
 private:
 	cPasajero** ListaPasajeros;
-	unsigned int ocupados;
-	unsigned int capacidad;
+	unsigned int ocupados;//cuantos pasajeros ocupan la lista
+	unsigned int capacidad; //cuantos pasajeeros entran en la lista
 public:
 	cListaPasajeros(unsigned int longitud = MAX);
 	~cListaPasajeros();
 	bool AgregarPasajero(cPasajero* _pasajero); //agrega un pasajero a la lista de vuelos
-	void CambiarPasajero(string _DNIPasajero, cPasajero* PasajeroNuevo);//modifica el pasajero
+	bool CambiarPasajero(string _DNIPasajero, cPasajero* PasajeroNuevo);//modifica el pasajero
 	bool EliminarPasajero(string _DNIPasajero); //elimina el pasajero a la lista de vuelo
 	unsigned int getocupados()
 	{
@@ -26,7 +26,7 @@ public:
 	{
 		return capacidad;
 	}
-	cPasajero* getListaPasajeros(int i)
+	cPasajero* getListaPasajeros(int i) //me permite ingresar a cada pasajero de la lista
 	{
 		return ListaPasajeros[i];
 	}

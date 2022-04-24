@@ -33,6 +33,21 @@ public:
 	{
 		CantidadVuelos--;
 	}
+	void setEstadoFecha(estado _estado)
+	{
+		if (_estado == RecibiendoPermisoParaAterrizar || _estado == RecibiendoPermisoParaDespegar) //si pudo despegar 
+		{
+			fechayhoraReal->setestadohorario(EnHoario); //se encuentra en horario
+		}
+		if (_estado == NoRecibiendoPermisoParaAterrizar || _estado == NoRecibiendoPermisoParaDespegar) //si no pudo
+		{
+			fechayhoraReal->setestadohorario(ConDemora); //se encuentra con demora
+		}
+	}
+	estadoHorario getEstadoFehca()
+	{
+		return fechayhoraReal->estado;
+	}
 	bool AgregarPasajeroAlVuelo(cPasajero*_pasajero);
 	bool CambiarPasajeroAlVuelo(cPasajero*_pasajero, cPasajero* _pasajerocambio);
 	bool EliminarPasajeroAlVuelo(cPasajero* _pasajero);
@@ -41,7 +56,7 @@ public:
 	{
 		this->CantidadVuelos = longitud;
 	}
-	string NumeroDeVueloRandom();
+	void NumeroDeVueloRandom(); //genero un numero de vuelo de letras y numeros
 	void  setNumeroVuelo(string _numVuelo)
 	{
 		this->NumVuelo = _numVuelo;
@@ -50,9 +65,17 @@ public:
 	{
 		return ListaPasajeros;
 	}
-	string ObtenerDatosPasajero(const string _DNI);//Busca el pasajero a partir del DNI
+	string ObtenerDatosPasajero(const string _DNI);//busca a un pasajero por su dni y obtiene sus datos
 	float setpesototal();//devuelve el peso total con un contador de las valijas del pasajero y cada pasajero
-	float pesototaldelvuelo();
+	void pesototaldelvuelo();
+	float setEstadoVuelo()
+	{
+		EstadoVuelo = avion->getEstadoVuelo();
+	}
+	estado getEstadoVuelo()
+	{
+		return EstadoVuelo;
+	}
 	string to_string();
 	void imprimir();
 };

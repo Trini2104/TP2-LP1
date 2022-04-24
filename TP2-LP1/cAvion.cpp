@@ -27,7 +27,7 @@ void cAvion::setEstadoVuelo(estado _estadovuelo)
 {
 	this->EstadoVuelo = _estadovuelo;
 }
-bool cAvion::ChequearCargaMaxima()
+bool cAvion::ChequearCargaMaxima() //si el peso total recibido por el setter desde vuelo el menor al maximo puede despegar
 {
 	if (PesoReal < PesoMaxTotal)
 	{
@@ -40,11 +40,11 @@ bool cAvion::ChequearCargaMaxima()
 		return false;
 	}
 }
-bool cAvion::AntesDeSalirDelAeropuerto()
+bool cAvion::AntesDeSalirDelAeropuerto() 
 {
-	if (ChequearCargaMaxima() == true && getCantidadActualDePasajeros()<=getCantidadPasajerosPermitidos())
+	if (ChequearCargaMaxima() == true && getCantidadActualDePasajeros()<=getCantidadPasajerosPermitidos()) //si recibio permiso y si la cantidad actual de pasajeros es menor a la de permitidos
 	{
-		setEstadoVuelo(RecibiendoPermisoParaDespegar);
+		setEstadoVuelo(RecibiendoPermisoParaDespegar); //puede despegar
 		return true;
 	}
 	else
@@ -53,7 +53,7 @@ bool cAvion::AntesDeSalirDelAeropuerto()
 		return false;
 	}
 }
-bool cAvion::Despegar()
+bool cAvion::Despegar() //si tiene permiso despega
 {
 	if (AntesDeSalirDelAeropuerto() == true)
 	{
