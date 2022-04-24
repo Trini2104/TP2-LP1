@@ -32,5 +32,20 @@ bool cAeropuerto::Aterrizaje()
 	{
 		ListaAviones->AgregarAvion(Avion);
 		Avion->setEstadoVuelo(Aterrizando);
+		return true;
+	}
+	else
+		return false;
+}
+bool cAeropuerto::Despegue()
+{
+	if (Avion->getEstadoVuelo() == Despegando)
+	{
+		ListaAviones->EliminarAvion(Avion);
+		return true;
+	}
+	else
+	{
+		return false;
 	}
 }

@@ -37,7 +37,7 @@ void cListaPasajeros::ordenar()
 	}
 }
 
-void cListaPasajeros::CambiarPasajero(string _DNIPasajero, cPasajero* PasajeroNuevo)
+bool cListaPasajeros::CambiarPasajero(string _DNIPasajero, cPasajero* PasajeroNuevo)
 {
 	for (int i = 0; i < capacidad; i++)
 	{
@@ -46,7 +46,10 @@ void cListaPasajeros::CambiarPasajero(string _DNIPasajero, cPasajero* PasajeroNu
 			cPasajero* aux = ListaPasajeros[i];
 			ListaPasajeros[i] = PasajeroNuevo;
 			delete aux;
+			return true;
 		}
+		else
+			return false;
 	}
 
 }

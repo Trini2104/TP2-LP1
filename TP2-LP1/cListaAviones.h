@@ -13,6 +13,8 @@ public:
 	cListaAviones(unsigned int longitud = MAX);
 	~cListaAviones();
 	bool AgregarAvion(cAvion* _avion);
+	bool EliminarAvion(cAvion* _avion);
+	void Ordenar();
 	cAvion* getListaAviones(int i)
 	{
 		return ListaAviones[i];

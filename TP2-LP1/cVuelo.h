@@ -33,7 +33,9 @@ public:
 	{
 		CantidadVuelos--;
 	}
-
+	bool AgregarPasajeroAlVuelo(cPasajero*_pasajero);
+	bool CambiarPasajeroAlVuelo(cPasajero*_pasajero, cPasajero* _pasajerocambio);
+	bool EliminarPasajeroAlVuelo(cPasajero* _pasajero);
 
 	void setCantidadVuelos(int longitud)
 	{

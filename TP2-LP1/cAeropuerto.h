@@ -1,6 +1,8 @@
 #pragma once
 #include "cVuelo.h"
 #include "cAvion.h"
+#include "cListaAviones.h"
+#include"cListaVuelos.h"
 #include <iostream>
 #include <string>
 using namespace std;
@@ -24,11 +26,11 @@ public:
 	void CantidadDeVuelosAterrizadosYDespegadosXDia(); //hace un contador de aviones a partir de la lista de aviones
 	void PorcentajeDeVuelosEnHorario(); // usa la  CantidadDeVuelosAterrizadosYDespegadosXDia( y calcula un contador de los vuelos en horario y fecha correspondiente y saca el porcentaje
 	bool Aterrizaje();
+	bool Despegue();
 	const int getCapacidadAeropuerto()
 	{
 		return CapacidadDeAeropuerto;
 	}
 	string to_string();
 	void imprimir();
-};
 };

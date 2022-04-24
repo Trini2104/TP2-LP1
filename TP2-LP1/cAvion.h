@@ -27,9 +27,9 @@ public:
 
 	float PesoDelAvion();
 
-	void ChequearCargaMaxima(cAvion* avion); //verifica que no supere el peso
-	void AntesDeSalirDelAeropuerto(); //verifica que se cumplan la CantidadPasajerosPermitidos y PesoMaxTotal
-
+	bool ChequearCargaMaxima(); //verifica que no supere el peso
+	bool AntesDeSalirDelAeropuerto(); //verifica que se cumplan la CantidadPasajerosPermitidos y PesoMaxTotal
+	bool Despegar();
 	void setEstadoVuelo(estado _estadovuelo);
 
 	const int getCantidadPasajerosPermitidos()

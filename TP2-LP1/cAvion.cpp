@@ -27,14 +27,41 @@ void cAvion::setEstadoVuelo(estado _estadovuelo)
 {
 	this->EstadoVuelo = _estadovuelo;
 }
-void cAvion::ChequearCargaMaxima(cAvion* avion)
+bool cAvion::ChequearCargaMaxima()
 {
 	if (PesoReal < PesoMaxTotal)
 	{
 		setEstadoVuelo(RecibiendoPermisoParaDespegar);
+		return true;
 	}
 	else
 	{
 		setEstadoVuelo(NoRecibiendoPermisoParaAterrizar);
+		return false;
+	}
+}
+bool cAvion::AntesDeSalirDelAeropuerto()
+{
+	if (ChequearCargaMaxima() == true && getCantidadActualDePasajeros()<=getCantidadPasajerosPermitidos())
+	{
+		setEstadoVuelo(RecibiendoPermisoParaDespegar);
+		return true;
+	}
+	else
+	{
+		setEstadoVuelo(NoRecibiendoPermisoParaDespegar);
+		return false;
+	}
+}
+bool cAvion::Despegar()
+{
+	if (AntesDeSalirDelAeropuerto() == true)
+	{
+		setEstadoVuelo(Despegando);
+		return true;
+	}
+	else
+	{
+		setEstadoVuelo(Nodespega);
 	}
 }

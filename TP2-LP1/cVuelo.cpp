@@ -49,6 +49,35 @@ string cVuelo::NumeroDeVueloRandom()
 	this->setNumeroVuelo(numVuelo);
 
 };
+bool cVuelo::AgregarPasajeroAlVuelo(cPasajero* _pasajero) 
+{
+	if (ListaPasajeros->AgregarPasajero(_pasajero) == true)
+	{
+		return true;
+	}
+	else
+		return false;
+
+}
+bool cVuelo::CambiarPasajeroAlVuelo(cPasajero*_pasajero,cPasajero*_pasajerocambio)
+{
+	string DNIdelPasajero = _pasajero->getDNI();
+	if (ListaPasajeros->CambiarPasajero(DNIdelPasajero, _pasajerocambio) == true)
+	{
+		return true;
+	}
+	else
+		return false;
+}
+bool cVuelo::EliminarPasajeroAlVuelo(cPasajero* _pasajero)
+{
+	if (ListaPasajeros->EliminarPasajero(_pasajero->getDNI()) == true)
+	{
+		return true;
+	}
+	else
+		return false;
+}
 float cVuelo::pesototaldelvuelo()
 {
 	int pesopasajeros = 0;
