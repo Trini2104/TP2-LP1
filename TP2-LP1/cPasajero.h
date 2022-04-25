@@ -62,8 +62,26 @@ public:
 	{
 		return NumAsiento;
 	}
-
+	cListaEquipaje* getlistaequipaje()
+	{
+		return ListaeValijasATransportar;
+	}
+	
 	bool AgregarEquipaje(cEquipaje* _equipaje);//chequea que el equipaje total no supere los 25kg p/persona y si puede agregar mas
+	bool operator+(cEquipaje* _equipaje)
+	{
+		if (AgregarEquipaje(_equipaje) == true)
+			return true;
+		else return false;
+
+	}
+	bool EliminarEquipaje(cEquipaje* _equipaje);
+	bool operator-(cEquipaje* _equipaje)
+	{
+		if (EliminarEquipaje(_equipaje) == true)
+			return true;
+		else return false;
+	}
 	int getCantidadPasajero()
 	{
 		return cantidadPasajeros;

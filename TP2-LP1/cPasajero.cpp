@@ -16,6 +16,8 @@ int cPasajero::cantidadPasajeros = 0;
 
 bool cPasajero::asociarListaEquipaje(cListaEquipaje* _ListaEquipaje)
 {
+	
+
 	if (this->ListaeValijasATransportar == NULL)
 	{
 		this->ListaeValijasATransportar = _ListaEquipaje;
@@ -25,6 +27,8 @@ bool cPasajero::asociarListaEquipaje(cListaEquipaje* _ListaEquipaje)
 }
 bool cPasajero::AgregarEquipaje(cEquipaje* _equipaje)
 {
+	//(*ListaeValijasATransportar)[0]->getPesoDelEquipaje();
+	
 	if (ListaeValijasATransportar->PesoTotalEquipaje() + _equipaje->getPesoDelEquipaje() < 25) //si la suma de todo su equipaje mas el que desea agregar es menor a todo su equipaje puede agregarlo
 	{
 		ListaeValijasATransportar->AgregarEquipaje(_equipaje);
@@ -35,6 +39,13 @@ bool cPasajero::AgregarEquipaje(cEquipaje* _equipaje)
 		return false;
 	}
 };
+bool cPasajero::EliminarEquipaje(cEquipaje* _equipaje)
+{
+	if (ListaeValijasATransportar->EliminarEquipaje(_equipaje->getDNIduenio()) == true)
+		return true;
+	else return false;
+
+}
 
 unsigned int cPasajero::getEquipaje()
 {

@@ -26,7 +26,17 @@ public:
 	}
 	cPasajero* getListaPasajeros(int i) //me permite ingresar a cada pasajero de la lista
 	{
-		return ListaPasajeros[i];
+		if (i < capacidad && i >= 0)
+		{
+			return ListaPasajeros[i];
+
+		}
+		throw invalid_argument("Posición inválida");
+	}
+
+	cPasajero* operator[](int i)
+	{
+		return getListaPasajeros(i);
 	}
 	void ordenar();
 

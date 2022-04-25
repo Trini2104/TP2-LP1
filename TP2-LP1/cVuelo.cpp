@@ -27,13 +27,13 @@ string cVuelo::ObtenerDatosPasajero(const string _DNIPasajero)
 	float peso;
 	for (int i = 0; i < ListaPasajeros->getocupados(); i++)
 	{
-		if (this->ListaPasajeros->getListaPasajeros(i) != NULL && ListaPasajeros->getListaPasajeros(i)->getDNI() == _DNIPasajero) //ingresa a cada pasajero de la lista y busca al pasajero por su dni
+		if ((*ListaPasajeros)[i]!= NULL && (*ListaPasajeros)[i]->getDNI() == _DNIPasajero) //ingresa a cada pasajero de la lista y busca al pasajero por su dni
 		{
-			cant = ListaPasajeros->getListaPasajeros(i)->getEquipaje();
-			peso = +ListaPasajeros->getListaPasajeros(i)->getPesoTotalequipaje(); 
+			cant = (*ListaPasajeros)[i]->getEquipaje();
+			peso = +(*ListaPasajeros)[i]->getPesoTotalequipaje();
 			string cantequipaje(std::to_string(cant)); //convierte a string las cantidad de equipaje del pasajero
 			string pesoequipaje(std::to_string(peso)); //convierte a string el peso de todo el equipaje
-			datospasajero += "PASAJERO: " + ListaPasajeros->getListaPasajeros(i)->getDNI() + ListaPasajeros->getListaPasajeros(i)->getapellido() + cantequipaje + pesoequipaje;
+			datospasajero += "PASAJERO: " + (*ListaPasajeros)[i]->getDNI() + (*ListaPasajeros)[i]->getapellido() + cantequipaje + pesoequipaje;
 			//si encuentra al pasajero por su dni guarda todos sus datos en un string
 		}
 	}
@@ -88,8 +88,8 @@ void cVuelo::pesototaldelvuelo()
 	pesopasajeros = (cantidadPasajeros + 4) * 75; //calcula el peso de todos los pasajeros que viajan en el vuelo 
 	for (int i = 0; i < cantidadPasajeros; i++)//ingresa a la lista pasajero de su vuelo
 	{
-		PesoValijas = PesoValijas + ListaPasajeros->getListaPasajeros(i)->getPesoTotalequipaje();//recorre la lista y encuentra su peso total por pasajero
-	//suma el peso total de todas las valijas 
+		PesoValijas = PesoValijas + (*ListaPasajeros)[i]->getPesoTotalequipaje();//recorre la lista y encuentra su peso total por pasajero
+//suma el peso total de todas las valijas 
 	}
 	PesoTotal = PesoValijas + pesopasajeros; //suma el peso de los pasajeros y de las valijas
 	this->avion->setPesoReaal(PesoTotal); //ingresa el peso total del vuelo a su avion correspondiente

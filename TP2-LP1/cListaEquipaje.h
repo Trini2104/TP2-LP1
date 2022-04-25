@@ -22,6 +22,18 @@ public:
 	{
 		return ListaEquipaje;
 	}
+
+	cEquipaje* getEquipaje(int i)
+	{
+		if (i < capacidad && i >= 0)
+			return ListaEquipaje[i];
+		else
+			throw invalid_argument("Posición inválida");
+	}
+	cEquipaje* operator[](int i)
+	{
+		return getEquipaje(i);
+	}
 	void ordenar();
 	~cListaEquipaje();
 
