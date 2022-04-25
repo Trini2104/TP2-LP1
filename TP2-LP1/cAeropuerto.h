@@ -21,7 +21,6 @@ public:
 	~cAeropuerto();
 	bool DarPermiso(); //tiene una exepcion, da o no da el permiso segun la disponibilidad del hangar; 
 	int CantidadTotalDePasajerosXDia(); //tiene que recibir la cantidad actual de paajeros de cada avion de la lista ade aviones
-	
 	int CantidadDeVuelosAterrizadosXDias();//calcula la cantidad de vuelos aterrizados en un dia
 	int CantidadDeVuelosDespegadosXDias();//hace un contador de aviones a partir de la lista de aviones
 	float PorcentajeDeVuelosEnHorario(); // usa la  CantidadDeVuelosAterrizadosYDespegadosXDia( y calcula un contador de los vuelos en horario y fecha correspondiente y saca el porcentaje

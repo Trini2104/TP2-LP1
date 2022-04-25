@@ -25,12 +25,10 @@ public:
 	};
 
 	float PesoDelAvion();
-
 	bool ChequearCargaMaxima(); //verifica que no supere el peso
 	bool AntesDeSalirDelAeropuerto(); //verifica que se cumplan la CantidadPasajerosPermitidos y PesoMaxTotal
 	bool Despegar(); //Cambia el estado del avion
 	void setEstadoVuelo(estado _estadovuelo); 
-
 	const int getCantidadPasajerosPermitidos()
 	{
 		return CantidadPasajerosPermitidos;
@@ -40,7 +38,6 @@ public:
 		return CantidadActualDePasajeros;
 	}
 	void setPesoReaal(float _peso);
-
 	estado getEstadoVuelo()
 	{
 		return EstadoVuelo;

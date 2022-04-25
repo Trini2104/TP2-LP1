@@ -14,12 +14,11 @@ private:
 	cAvion* avion;//en el que se lleva ese vuelo
 	tipovuelo TipoVuelo;//partida o arribo
 	cFecha* fechayhoraReal; //fecha y hora con la que llego y salió realmente
-	//cAeropuerto* aeropuertoDestino;
-	string aeropuertoDestino;
+	string aeropuertoDestino; // enum destinos
 	cListaPasajeros* ListaPasajeros;//pasajeros del vuelo
 	static int CantidadVuelos;
 	cListaEquipaje* ListaEquipajeVuelo;//equipaje del vuelo
-	friend class cLIstaVuelos;
+	friend class cListaVuelos;
 public:
 	cVuelo(string _numVuelo, estado _EstadoVuelo, tipovuelo _TipoVuelo, string _aeropuertoDestino)
 	{
@@ -48,7 +47,6 @@ public:
 	bool AgregarPasajeroAlVuelo(cPasajero*_pasajero);
 	bool CambiarPasajeroAlVuelo(cPasajero*_pasajero, cPasajero* _pasajerocambio);
 	bool EliminarPasajeroAlVuelo(cPasajero* _pasajero);
-
 	void setCantidadVuelos(int longitud)
 	{
 		this->CantidadVuelos = longitud;

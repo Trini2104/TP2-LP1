@@ -33,7 +33,6 @@ public:
 		}
 		throw invalid_argument("Posición inválida");
 	}
-
 	cPasajero* operator[](int i)
 	{
 		return getListaPasajeros(i);
