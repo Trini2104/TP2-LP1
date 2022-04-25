@@ -14,17 +14,19 @@ cAeropuerto::~cAeropuerto() {};
 
 bool cAeropuerto::DarPermiso() //dependiendo de la capacidad del aeropuerto da o no permiso
 {
-	if (ListaAviones->getOcupados() > getCapacidadAeropuerto())
-	{
-		Avion->setEstadoVuelo(NoRecibiendoPermisoParaAterrizar); //no da el permiso
-		return false;
-	}
-	else
-	{
-		Avion->setEstadoVuelo(RecibiendoPermisoParaAterrizar); //da el permiso
-		//ListaAviones->AgregarAvion(Avion);
-		return true;
-	}
+		if (ListaAviones->getOcupados() < getCapacidadAeropuerto())
+		{
+			Avion->setEstadoVuelo(RecibiendoPermisoParaAterrizar); //da el permiso
+			//ListaAviones->AgregarAvion(Avion);
+			return true;
+			
+		}
+		if(ListaAviones->getOcupados()>getCapacidadAeropuerto())
+		{
+			Avion->setEstadoVuelo(NoRecibiendoPermisoParaAterrizar); //no da el permiso
+			return false;
+			throw new runtime_error("Hangar lleno");
+		}
 }
 bool cAeropuerto::Aterrizaje()
 {
