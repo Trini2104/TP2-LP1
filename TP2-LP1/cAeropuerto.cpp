@@ -61,7 +61,7 @@ int cAeropuerto::CantidadTotalDePasajerosXDia()
 }
 int cAeropuerto::CantidadDeVuelosAterrizadosXDias()
 {
-	int cantDespegues, canAterrizados;
+	int cantDespegues=0, canAterrizados=0;
 	int cantidadvuelos = ListaVuelos->getocupados();
 	for (int i = 0; i < cantidadvuelos; i++)
 	{
@@ -75,7 +75,7 @@ int cAeropuerto::CantidadDeVuelosAterrizadosXDias()
 }
 int cAeropuerto::CantidadDeVuelosDespegadosXDias()
 {
-	int cantDespegues, canAterrizados;
+	int cantDespegues=0, canAterrizados=0;
 	int cantidadvuelos = ListaVuelos->getocupados();
 	for (int i = 0; i < cantidadvuelos; i++)
 	{
@@ -99,6 +99,6 @@ float cAeropuerto::PorcentajeDeVuelosEnHorario()
 		
 	}
 	float  porcEnHorario=0;
-	porcEnHorario = (contadorenhorario * 100) / cantidadvuelos; //calcula su porcentaje con respecto a los de los demas
+	porcEnHorario = (contadorenhorario * 100) / (float)cantidadvuelos; //calcula su porcentaje con respecto a los de los demas
 	return porcEnHorario;
 }

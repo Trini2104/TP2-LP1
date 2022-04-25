@@ -2,8 +2,6 @@
 #include "cAvion.h"
 #include <iostream>
 #include <string>
-#include "cEquipaje.h"
-#include"cVuelo.h"
 #include "cPasajero.h"
 #define MAX 20
 class cListaPasajeros

@@ -1,7 +1,6 @@
 #include<iostream>
 #include<string>
 #include"cAvion.h"
-#include "cVuelo.h"
 using namespace std;
 
 cAvion::cAvion(string _IDAvion, int _CantidadPasajerosPermitidos, int _CantidadActualDePasajeros, float _PesoMaxTotal, estado _EstadoVuelo) :IDAvion(_IDAvion), CantidadPasajerosPermitidos(_CantidadPasajerosPermitidos), PesoMaxTotal(_PesoMaxTotal)

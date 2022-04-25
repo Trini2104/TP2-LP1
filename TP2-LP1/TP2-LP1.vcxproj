@@ -162,6 +162,7 @@
     <ClCompile Include="cPasajero.cpp" />
     <ClCompile Include="cVuelo.cpp" />
     <ClCompile Include="cListaEquipaje.cpp" />
+    <ClCompile Include="TP2-LP1.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

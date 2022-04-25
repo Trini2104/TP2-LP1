@@ -2,7 +2,6 @@
 #include "cFecha.h"
 #include <iostream>
 #include <string>
-#include "cEquipaje.h"
 #include"cListaEquipaje.h"
 using namespace std;
 
@@ -32,7 +31,7 @@ public:
 	};
 
 	//metodos:
-
+	bool asociarListaEquipaje(cListaEquipaje* _ListaEquipaje);
 	float getPesoTotalequipaje()
 	{
 		return ListaeValijasATransportar->PesoTotalEquipaje();

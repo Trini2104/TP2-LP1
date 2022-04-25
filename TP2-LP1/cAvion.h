@@ -1,6 +1,5 @@
 #pragma once
 #include "Enums.h"
-#include "cPasajero.h"
 #include <iostream>
 #include <string>
 using namespace std;
@@ -8,9 +7,9 @@ class cAvion
 {
 private:
 	const string IDAvion; //del avion
-	const int CantidadPasajerosPermitidos;
+	const int CantidadPasajerosPermitidos=2;
 	int CantidadActualDePasajeros;
-	const float PesoMaxTotal;
+	const float PesoMaxTotal=500;
 	float PesoReal;
 	static int cantidadAviones;
 	estado EstadoVuelo; //despegue, aterriza, pedir permiso, recibir permiso

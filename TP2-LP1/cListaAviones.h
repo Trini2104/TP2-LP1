@@ -7,8 +7,8 @@ class cListaAviones
 {
 private:
 	cAvion** ListaAviones;
-	unsigned int ocupados;
-	unsigned int capacidad;
+	 int ocupados;
+	int capacidad;
 public:
 	cListaAviones(unsigned int longitud = MAX);
 	~cListaAviones();
@@ -19,7 +19,7 @@ public:
 	{
 		return ListaAviones[i];
 	}
-	unsigned int getOcupados()
+	 int getOcupados()
 	{
 		return ocupados;
 	}

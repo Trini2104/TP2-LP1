@@ -1,10 +1,6 @@
 #pragma once
-#include "Enums.h"
-#include "cAvion.h"
-#include "cFecha.h"
-#include "cAeropuerto.h"
-#include "cPasajero.h"
-#include"cListaPasajeros.h"
+class cAvion;
+#include "cListaPasajeros.h"
 #include <iostream>
 #include <string>
 using namespace std;
@@ -18,13 +14,14 @@ private:
 	cAvion* avion;//en el que se lleva ese vuelo
 	tipovuelo TipoVuelo;//partida o arribo
 	cFecha* fechayhoraReal; //fecha y hora con la que llego y salió realmente
-	cAeropuerto* aeropuertoDestino;
+	//cAeropuerto* aeropuertoDestino;
+	string aeropuertoDestino;
 	cListaPasajeros* ListaPasajeros;//pasajeros del vuelo
 	static int CantidadVuelos;
 	cListaEquipaje* ListaEquipajeVuelo;//equipaje del vuelo
 	friend class cLIstaVuelos;
 public:
-	cVuelo(string _numVuelo, estado _EstadoVuelo, tipovuelo _TipoVuelo)
+	cVuelo(string _numVuelo, estado _EstadoVuelo, tipovuelo _TipoVuelo, string _aeropuertoDestino)
 	{
 		CantidadVuelos++;
 

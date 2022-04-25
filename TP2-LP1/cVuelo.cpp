@@ -4,14 +4,14 @@
 using namespace std;
 using std::cout; using std::cin;
 using std::endl; using std::string;
-cVuelo::cVuelo(string _numVuelo, estado _EstadoVuelo, tipovuelo _TipoVuelo)
+cVuelo::cVuelo(string _numVuelo, estado _EstadoVuelo, tipovuelo _TipoVuelo, string _aeropuertoDestino)
 {
 	this->NumVuelo = _numVuelo;
 	this->EstadoVuelo = _EstadoVuelo;
 	this->TipoVuelo = _TipoVuelo;
 	avion = NULL;
 	fechayhoraReal = NULL;
-	aeropuertoDestino = NULL;
+	aeropuertoDestino = _aeropuertoDestino;
 	ListaPasajeros = NULL;
 	ListaEquipajeVuelo = NULL;
 

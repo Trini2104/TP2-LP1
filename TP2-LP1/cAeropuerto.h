@@ -1,8 +1,6 @@
 #pragma once
-#include "cVuelo.h"
-#include "cAvion.h"
+#include "cListaVuelos.h"
 #include "cListaAviones.h"
-#include"cListaVuelos.h"
 #include <iostream>
 #include <string>
 using namespace std;

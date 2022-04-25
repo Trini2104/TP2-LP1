@@ -14,6 +14,15 @@ cPasajero::cPasajero(string _DNI, string _nombre, string _apellido, string _NumV
 cPasajero::~cPasajero() {};
 int cPasajero::cantidadPasajeros = 0;
 
+bool cPasajero::asociarListaEquipaje(cListaEquipaje* _ListaEquipaje)
+{
+	if (this->ListaeValijasATransportar == NULL)
+	{
+		this->ListaeValijasATransportar = _ListaEquipaje;
+		return true;
+	}
+	else return false;
+}
 bool cPasajero::AgregarEquipaje(cEquipaje* _equipaje)
 {
 	if (ListaeValijasATransportar->PesoTotalEquipaje() + _equipaje->getPesoDelEquipaje() < 25) //si la suma de todo su equipaje mas el que desea agregar es menor a todo su equipaje puede agregarlo
