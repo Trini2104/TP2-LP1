@@ -112,3 +112,11 @@ ostream& operator<<(ostream &out, cVuelo* vuelo)
 	
 	return out;
 }
+void cVuelo::AsignarListaPasajeros(cListaPasajeros* _ListaPasajeros)
+{
+	this->ListaPasajeros = _ListaPasajeros;
+}
+void cVuelo::DesasociarListaPasajeros()
+{
+	ListaPasajeros = NULL;
+};

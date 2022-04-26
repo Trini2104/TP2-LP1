@@ -26,6 +26,7 @@ public:
 
 	//metodos:
 	bool asociarListaEquipaje(cListaEquipaje* _ListaEquipaje);
+	void desasociarEquipaje();
 	float getPesoTotalequipaje()
 	{
 		return ListaDeValijasATransportar->PesoTotalEquipaje();
@@ -80,7 +81,6 @@ public:
 	{
 		return cantidadPasajeros;
 	}
-
 	string to_string();
 	void imprimir();
 };

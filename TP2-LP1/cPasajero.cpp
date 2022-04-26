@@ -21,13 +21,17 @@ bool cPasajero::asociarListaEquipaje(cListaEquipaje* _ListaEquipaje)
 {
 	
 
-	if (this->ListaDeValijasATransportar == NULL)
+	if (this->ListaDeValijasATransportar != NULL)
 	{
 		this->ListaDeValijasATransportar = _ListaEquipaje;
 		return true;
 	}
 	else return false;
 }
+void cPasajero::desasociarEquipaje()
+{
+	ListaDeValijasATransportar = NULL; //esto a chequear
+};
 bool cPasajero::AgregarEquipaje(cEquipaje* _equipaje)
 {
 	//(*ListaeValijasATransportar)[0]->getPesoDelEquipaje();
@@ -54,7 +58,6 @@ unsigned int cPasajero::getEquipaje()
 {
 	return ListaDeValijasATransportar->getocupados();
 }
-
 string cPasajero::to_string()
 {
 	return

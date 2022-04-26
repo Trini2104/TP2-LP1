@@ -64,6 +64,8 @@ public:
 		return EstadoVuelo;
 	}
 	friend ostream &operator<<(ostream& out, cVuelo* vuelo);
+	void AsignarListaPasajeros(cListaPasajeros* _ListaPasajeros);
+	void DesasociarListaPasajeros();
 	string to_string();
 	void imprimir();
 };

@@ -28,6 +28,8 @@ public:
 	bool Despegue(cAvion* _avion);//elimina un avion del aeropuerto
 	void AsignarListaVuelos(cListaVuelos* _ListaVuelos);
 	void AsignarListaAviones(cListaAviones* _ListaAviones);
+	void DesasociarListaVuelos();
+	void DesasociarListaAviones();
 	const int getCapacidadAeropuerto()
 	{
 		return CapacidadDeAeropuerto;

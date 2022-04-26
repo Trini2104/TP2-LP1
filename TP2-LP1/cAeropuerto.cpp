@@ -20,6 +20,14 @@ void cAeropuerto::AsignarListaAviones(cListaAviones* _ListaAviones)
 {
 	this->ListaAviones = _ListaAviones;
 }
+void cAeropuerto::DesasociarListaVuelos()
+{
+	ListaVuelos = NULL;
+};
+void cAeropuerto::DesasociarListaAviones()
+{
+	ListaAviones = NULL;
+};
 bool cAeropuerto::DarPermiso(cAvion* _avion) //dependiendo de la capacidad del aeropuerto da o no permiso
 {
 		if (ListaAviones->getOcupados() < getCapacidadAeropuerto()) //  si la cantidad de aviones en el hangar es menor a la capacidad del mismo
