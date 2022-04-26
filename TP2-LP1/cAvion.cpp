@@ -3,9 +3,11 @@
 #include"cAvion.h"
 using namespace std;
 
-cAvion::cAvion(string _IDAvion, int _CantidadPasajerosPermitidos, int _CantidadActualDePasajeros, float _PesoMaxTotal, estado _EstadoVuelo) :IDAvion(_IDAvion), CantidadPasajerosPermitidos(_CantidadPasajerosPermitidos), PesoMaxTotal(_PesoMaxTotal)
+cAvion::cAvion(string _IDAvion, int _CantidadPasajerosPermitidos, int _CantidadActualDePasajeros, float _PesoMaxTotal, float _pesoreal, int _cantidadaviones, estado _EstadoVuelo) :IDAvion(_IDAvion), CantidadPasajerosPermitidos(_CantidadPasajerosPermitidos), PesoMaxTotal(_PesoMaxTotal)
 {
 	this->CantidadActualDePasajeros = _CantidadActualDePasajeros;
+	this->PesoReal = _pesoreal;
+	this->cantidadAviones = _cantidadaviones;
 	this->EstadoVuelo = _EstadoVuelo;
 };
 cAvion::~cAvion() {};
@@ -63,4 +65,18 @@ bool cAvion::Despegar() //si tiene permiso despega
 	{
 		setEstadoVuelo(Nodespega);
 	}
+}
+string cAvion::to_string()
+{
+	return
+	"ID del avion: " + IDAvion + "\n";
+	"Cantidad de pasajeros permitidos:" + std::to_string(CantidadPasajerosPermitidos) + "\n";
+	"Cantidad actual de pasajeros:" + std::to_string(CantidadActualDePasajeros) + "\n";
+	"peso maximo total permitido:" + std::to_string(PesoMaxTotal) + "\n";
+	"peso actual del avion:" + std::to_string(PesoReal) + "\n";
+
+}
+void cAvion::imprimir()
+{
+	cout << this->to_string() << endl;
 }

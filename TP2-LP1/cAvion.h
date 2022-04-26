@@ -7,15 +7,15 @@ class cAvion
 {
 private:
 	const string IDAvion; //del avion
-	const int CantidadPasajerosPermitidos=2;
+	const int CantidadPasajerosPermitidos=120;
 	int CantidadActualDePasajeros;
-	const float PesoMaxTotal=500;
+	const float PesoMaxTotal=2000;
 	float PesoReal;
 	static int cantidadAviones;
 	estado EstadoVuelo; //despegue, aterriza, pedir permiso, recibir permiso
 	friend class cListaAviones;
 public:
-	cAvion(string _IDAvion, int _CantidadPasajerosPermitidos, int _CantidadActualDePasajeros, float _PesoMaxTotal, estado _EstadoVuelo)
+	cAvion(string _IDAvion, int _CantidadPasajerosPermitidos, int _CantidadActualDePasajeros, float _PesoMaxTotal, float _pesoreal, int _cantidadaviones, estado _EstadoVuelo)
 	{
 		cantidadAviones++;
 	};

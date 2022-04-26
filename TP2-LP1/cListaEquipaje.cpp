@@ -43,11 +43,11 @@ bool cListaEquipaje::AgregarEquipaje(cEquipaje* _equipaje)
 	ordenar();
 	if (ocupados >= capacidad)
 	{
-		return false;
+		return false; // si la cantidad de quipaje es mayor a la capacidad  
 	}
 	else
 	{
-		this->ListaEquipaje[ocupados] = _equipaje;
+		this->ListaEquipaje[ocupados] = _equipaje; // agrego equipaje
 		ocupados++;
 		return true;
 	}
@@ -71,8 +71,6 @@ bool cListaEquipaje::EliminarEquipaje(const string _DNIduenio)
 		}
 	}
 }
-
-
 
 float cListaEquipaje::PesoTotalEquipaje()
 {

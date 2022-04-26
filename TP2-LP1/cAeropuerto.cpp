@@ -3,7 +3,7 @@
 #include"cAeropuerto.h"
 
 using namespace std;
-cAeropuerto::cAeropuerto(string _IDAeropuerto, int _CapacidadDeAeropuerto) :IDAeropuerto(_IDAeropuerto), CapacidadDeAeropuerto(_CapacidadDeAeropuerto)
+cAeropuerto::cAeropuerto( string _IDAeropuerto, int _CapacidadDeAeropuerto) :IDAeropuerto(_IDAeropuerto), CapacidadDeAeropuerto(_CapacidadDeAeropuerto)
 {
 	Avion = NULL;
 	ListaVuelos = NULL;
@@ -14,30 +14,29 @@ cAeropuerto::~cAeropuerto() {};
 
 bool cAeropuerto::DarPermiso() //dependiendo de la capacidad del aeropuerto da o no permiso
 {
-		if (ListaAviones->getOcupados() < getCapacidadAeropuerto())
-		{
-			Avion->setEstadoVuelo(RecibiendoPermisoParaAterrizar); //da el permiso
+		if (ListaAviones->getOcupados() < getCapacidadAeropuerto()) //  si la cantidad de aviones en el hangar es menor a la capacidad del mismo
+		{	Avion->setEstadoVuelo(RecibiendoPermisoParaAterrizar); //da el permiso
 			//ListaAviones->AgregarAvion(Avion);
 			return true;
 			
 		}
-		if(ListaAviones->getOcupados()>getCapacidadAeropuerto())
+		if(ListaAviones->getOcupados()>getCapacidadAeropuerto()) // si el hangar se encuentra al tope de su capacidad
 		{
 			Avion->setEstadoVuelo(NoRecibiendoPermisoParaAterrizar); //no da el permiso
 			return false;
-			throw new runtime_error("Hangar lleno");
+			throw new runtime_error("Hangar lleno"); //lanza la excepcion 
 		}
 }
 bool cAeropuerto::Aterrizaje()
 {
-	if (Avion->getEstadoVuelo() == RecibiendoPermisoParaAterrizar) //si tiene el permiso
+	if (Avion->getEstadoVuelo() == RecibiendoPermisoParaAterrizar) //si tiene el permiso para aterrizar
 	{
-		ListaAviones->AgregarAvion(Avion); //le permite aterizar al aeropuerto y agrega un avion a la lista
-		Avion->setEstadoVuelo(Aterrizando);
+		ListaAviones->AgregarAvion(Avion); //le permite aterrizar en el aeropuerto y agrega un avion a la lista
+		Avion->setEstadoVuelo(Aterrizando); // modifico el estado del vuelo a aterrizado
 		return true;
 	}
 	else
-		return false;
+		return false; // retorno falso si no tiene permiso para aterrizar
 }
 bool cAeropuerto::Despegue()
 {
@@ -57,27 +56,27 @@ int cAeropuerto::CantidadTotalDePasajerosXDia()
 	int contadorPasajerosTotales=0;
 	for (int i =0; i < cantidadvuelos; i++)//recorre todos los vuelos 
 	{
-		contadorPasajerosTotales= contadorPasajerosTotales+ListaVuelos->getListaVuelos(i)->getlistapasajeros()->getocupados();
-	}//de cada lista vuelos buca cuantos pasajeros viajaron en cada una
-	return contadorPasajerosTotales;
+		contadorPasajerosTotales= contadorPasajerosTotales+ListaVuelos->getListaVuelos(i)->getlistapasajeros()->getocupados(); // suma la cantidad de pasajeros que hay por cada vuelo
+	}
+	return contadorPasajerosTotales; // retorno la cantidad total
 }
-int cAeropuerto::CantidadDeVuelosAterrizadosXDias()
+int cAeropuerto::CantidadDeVuelosAterrizadosXDia()
 {
-	int cantDespegues=0, canAterrizados=0;
+	int cantAterrizados=0;
 	int cantidadvuelos = ListaVuelos->getocupados();
 	for (int i = 0; i < cantidadvuelos; i++)
 	{
 		if (ListaVuelos->getListaVuelos(i)->getEstadoVuelo() == Aterrizando) //ingresa a todos los vuelos de la lista, contabiliza los vuelos que estan aterrizando
 		{
-			canAterrizados++;
+			cantAterrizados++;
 		}
 		
 	}
-	return canAterrizados;
+	return cantAterrizados;
 }
-int cAeropuerto::CantidadDeVuelosDespegadosXDias()
+int cAeropuerto::CantidadDeVuelosDespegadosXDia()
 {
-	int cantDespegues=0, canAterrizados=0;
+	int cantDespegues=0;
 	int cantidadvuelos = ListaVuelos->getocupados();
 	for (int i = 0; i < cantidadvuelos; i++)
 	{
@@ -94,13 +93,23 @@ float cAeropuerto::PorcentajeDeVuelosEnHorario()
 	int cantidadvuelos = ListaVuelos->getocupados();
 	for (int i = 0; i < cantidadvuelos; i++)
 	{
-		if (ListaVuelos->getListaVuelos(i)->getEstadoFehca() == EnHoario) //ingresa a cada vuelo, si su estado es en horario lo contabiliza
+		if (ListaVuelos->getListaVuelos(i)->getEstadoFehca() == EnHoario) //ingresa a cada vuelo, si su estado es en horario sumo 1
 		{
 			contadorenhorario++;
 		}
 		
 	}
-	float  porcEnHorario=0;
-	porcEnHorario = (contadorenhorario * 100) / (float)cantidadvuelos; //calcula su porcentaje con respecto a los de los demas
-	return porcEnHorario;
+	float  porcentajeEnHorario=0;
+	porcentajeEnHorario = (contadorenhorario * 100) / (float)cantidadvuelos; //divido la cantidad de vuelos que salieron a horario respecto a la cantidad de vuelos totales que hubo
+	return porcentajeEnHorario; // retorno el porcentaje
+}
+string cAeropuerto::to_string()
+{
+	return
+	"ID del aeropuerto" + IDAeropuerto + "\n";
+	"Capacidad del aeropuerto:" + std::to_string(CapacidadDeAeropuerto) + "\n";
+}
+void cAeropuerto::imprimir()
+{
+	cout << this->to_string() << endl;
 }

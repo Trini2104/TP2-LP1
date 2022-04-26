@@ -16,12 +16,13 @@ bool cListaPasajeros::AgregarPasajero(cPasajero* _pasajero)
 	if (ocupados >= capacidad)
 	{
 		return false;
-	}//si la cantidad de pasajeros es mayor a la cantidad de pasajeros permitidos falsos
-	this->ListaPasajeros[ocupados] = _pasajero;
+	}//si la cantidad de pasajeros es mayor a la cantidad de pasajeros permitidos, retorno falso
+	ordenar();
+	this->ListaPasajeros[ocupados] = _pasajero; // sino, agrego al pasajero al final de la lista
 	ocupados++;
 	return true;
 }
-void cListaPasajeros::ordenar()
+void cListaPasajeros::ordenar() // ordena la lista para que al agregar, directamente lo agrego al final del listado
 {
 	for (int i = 0; i < capacidad; i++)
 	{

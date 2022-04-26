@@ -9,7 +9,7 @@ cPasajero::cPasajero(string _DNI, string _nombre, string _apellido, string _NumV
 	this->NumVuelo = _NumVuelo;
 	equipaje = NULL;
 	FechaYHoraVuelo = NULL;
-	ListaeValijasATransportar = NULL;
+	ListaDeValijasATransportar = NULL;
 };
 cPasajero::~cPasajero() {};
 int cPasajero::cantidadPasajeros = 0;
@@ -18,9 +18,9 @@ bool cPasajero::asociarListaEquipaje(cListaEquipaje* _ListaEquipaje)
 {
 	
 
-	if (this->ListaeValijasATransportar == NULL)
+	if (this->ListaDeValijasATransportar == NULL)
 	{
-		this->ListaeValijasATransportar = _ListaEquipaje;
+		this->ListaDeValijasATransportar = _ListaEquipaje;
 		return true;
 	}
 	else return false;
@@ -29,9 +29,9 @@ bool cPasajero::AgregarEquipaje(cEquipaje* _equipaje)
 {
 	//(*ListaeValijasATransportar)[0]->getPesoDelEquipaje();
 	
-	if (ListaeValijasATransportar->PesoTotalEquipaje() + _equipaje->getPesoDelEquipaje() < 25) //si la suma de todo su equipaje mas el que desea agregar es menor a todo su equipaje puede agregarlo
+	if (ListaDeValijasATransportar->PesoTotalEquipaje() + _equipaje->getPesoDelEquipaje() < 25) //si la suma de todo su equipaje mas el que desea agregar es menor a todo su equipaje puede agregarlo
 	{
-		ListaeValijasATransportar->AgregarEquipaje(_equipaje);
+		ListaDeValijasATransportar->AgregarEquipaje(_equipaje);
 		return true;
 	}
 	else
@@ -41,7 +41,7 @@ bool cPasajero::AgregarEquipaje(cEquipaje* _equipaje)
 };
 bool cPasajero::EliminarEquipaje(cEquipaje* _equipaje)
 {
-	if (ListaeValijasATransportar->EliminarEquipaje(_equipaje->getDNIduenio()) == true)
+	if (ListaDeValijasATransportar->EliminarEquipaje(_equipaje->getDNIduenio()) == true)
 		return true;
 	else return false;
 
@@ -49,10 +49,8 @@ bool cPasajero::EliminarEquipaje(cEquipaje* _equipaje)
 
 unsigned int cPasajero::getEquipaje()
 {
-	return ListaeValijasATransportar->getocupados();
+	return ListaDeValijasATransportar->getocupados();
 }
-
-
 
 string cPasajero::to_string()
 {
@@ -62,7 +60,11 @@ string cPasajero::to_string()
 		"DNI: " + DNI + "\n" +
 		"Numero de vuelo: " + NumVuelo + "\n" +
 		"Numero de asiento: " + NumAsiento + "\n";
-	//"Cantidad y peso del equipaje: " + equipaje + "\n";
+	    "Cantidad de equipaje: " + std::to_string(equipaje->getCantidadDeEquipaje()) +"\n";
+		"Peso del equipaje: " + std::to_string(equipaje->getPesoDelEquipaje()) + "\n";
 
 }
-void imprimir();
+void cPasajero:: imprimir()
+{
+	cout << this->to_string() << endl;
+}

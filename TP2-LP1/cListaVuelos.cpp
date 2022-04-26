@@ -16,7 +16,7 @@ bool cListaVuelos::AgregarVuelo(cVuelo* _vuelo)
 	if (ocupados >= capacidad)
 	{
 		return false;
-	}//si la cantidad de pasajeros es mayor a la cantidad de pasajeros permitidos falsos
+	}
 	this->ListaVuelos[ocupados] = _vuelo;
 	ocupados++;
 	return true;

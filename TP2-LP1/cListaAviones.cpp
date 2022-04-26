@@ -15,7 +15,7 @@ bool cListaAviones::AgregarAvion(cAvion* _avion)
 	if (ocupados >= capacidad)
 	{
 		return false;
-	}//si la cantidad de pasajeros es mayor a la cantidad de pasajeros permitidos falsos
+	}//si la cantidad de pasajeros es mayor a la cantidad de pasajeros permitidos, no puedo agregar, por lo tanto retorno falso
 	this->ListaAviones[ocupados] = _avion;
 	ocupados++;
 	return true;
@@ -41,7 +41,7 @@ bool cListaAviones::EliminarAvion(cAvion* _avion)
 	{
 		for (int i = 0; i < capacidad; i++)
 		{
-			if (this->ListaAviones[i] != NULL && this->ListaAviones[i] == _avion)
+			if (this->ListaAviones[i] != NULL && this->ListaAviones[i] == _avion) // busco el avion del listado y lo elimmino si pertenece al listado
 			{
 				delete this->ListaAviones[i];
 				ListaAviones[i] = NULL;
@@ -49,7 +49,7 @@ bool cListaAviones::EliminarAvion(cAvion* _avion)
 				Ordenar();
 				return true;
 			}
-			else return false;
+			else return false; // si no pertenece al listado  o el listado de aviones esta vacio, retorno falso
 		}
 	}
 }

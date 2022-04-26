@@ -17,7 +17,7 @@ private:
 	string NumAsiento;//del vuelo
 	static int cantidadPasajeros;
 	cEquipaje* equipaje;
-	cListaEquipaje* ListaeValijasATransportar;
+	cListaEquipaje* ListaDeValijasATransportar;
 	friend class cListaEquipaje;
 	friend class cListaPasajeros;
 public:
@@ -34,7 +34,7 @@ public:
 	bool asociarListaEquipaje(cListaEquipaje* _ListaEquipaje);
 	float getPesoTotalequipaje()
 	{
-		return ListaeValijasATransportar->PesoTotalEquipaje();
+		return ListaDeValijasATransportar->PesoTotalEquipaje();
 	}
 	const string getDNI()
 	{
@@ -64,7 +64,7 @@ public:
 	}
 	cListaEquipaje* getlistaequipaje()
 	{
-		return ListaeValijasATransportar;
+		return ListaDeValijasATransportar;
 	}
 	
 	bool AgregarEquipaje(cEquipaje* _equipaje);//chequea que el equipaje total no supere los 25kg p/persona y si puede agregar mas

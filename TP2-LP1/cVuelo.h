@@ -14,13 +14,13 @@ private:
 	cAvion* avion;//en el que se lleva ese vuelo
 	tipovuelo TipoVuelo;//partida o arribo
 	cFecha* fechayhoraReal; //fecha y hora con la que llego y salió realmente
-	string aeropuertoDestino; // enum destinos
+	destinos aeropuertoDestino; // enum destinos
 	cListaPasajeros* ListaPasajeros;//pasajeros del vuelo
 	static int CantidadVuelos;
 	cListaEquipaje* ListaEquipajeVuelo;//equipaje del vuelo
 	friend class cListaVuelos;
 public:
-	cVuelo(string _numVuelo, estado _EstadoVuelo, tipovuelo _TipoVuelo, string _aeropuertoDestino)
+	cVuelo(string _numVuelo, estado _EstadoVuelo, tipovuelo _TipoVuelo, destinos _aeropuertoDestino)
 	{
 		CantidadVuelos++;
 
@@ -71,6 +71,7 @@ public:
 	{
 		return EstadoVuelo;
 	}
+	friend ostream &operator<<(ostream& out, cVuelo* vuelo);
 	string to_string();
 	void imprimir();
 };
