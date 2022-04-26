@@ -14,9 +14,11 @@ cVuelo::cVuelo(string _numVuelo, estado _EstadoVuelo, tipovuelo _TipoVuelo, dest
 	fechayhoraReal = NULL;
 	ListaPasajeros = NULL;
 	ListaEquipajeVuelo = NULL;
-
+	CantidadVuelos++;
 }
-cVuelo::~cVuelo() {};
+cVuelo::~cVuelo() {
+	CantidadVuelos--;
+};
 int cVuelo::CantidadVuelos = 0;
 
 
@@ -35,9 +37,15 @@ string cVuelo::ObtenerDatosPasajero(const string _DNIPasajero)
 			string pesoequipaje(std::to_string(peso)); //convierte a string el peso de todo el equipaje
 			datospasajero += "PASAJERO: " + (*ListaPasajeros)[i]->getDNI() + (*ListaPasajeros)[i]->getapellido() + cantequipaje + pesoequipaje;
 			//si encuentra al pasajero por su dni guarda todos sus datos en un string
+			return datospasajero;
 		}
+		else
+		{
+			throw  new runtime_error(" no se encuentra el pasajero solicitado");
+		}
+		
 	}
-	return datospasajero;
+	
 }
 void cVuelo::NumeroDeVueloRandom()
 {

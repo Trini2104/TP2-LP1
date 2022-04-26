@@ -2,11 +2,11 @@
 #include<string>
 #include "cListaEquipaje.h"
 using namespace std;
-cListaEquipaje::cListaEquipaje(unsigned int longitud)
+cListaEquipaje::cListaEquipaje(int longitud)
 {
 	capacidad = longitud;
 	this->ListaEquipaje = new cEquipaje * [longitud];
-	for (unsigned int i = 0; i < longitud; i++)
+	for ( int i = 0; i < longitud; i++)
 		this->ListaEquipaje[i] = NULL;
 	ocupados = 0;
 }
@@ -70,6 +70,7 @@ bool cListaEquipaje::EliminarEquipaje(const string _DNIduenio)
 			else return false;
 		}
 	}
+	else return false;
 }
 
 float cListaEquipaje::PesoTotalEquipaje()

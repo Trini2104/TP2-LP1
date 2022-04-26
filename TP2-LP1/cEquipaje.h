@@ -6,18 +6,12 @@ class cEquipaje
 {
 private:
 	static int CantidadEquipajes;
-	float peso = 0;
+	float peso;
 	const string DNIduenio; // asociamos el equipaje por dni
 	friend class cListaEquipaje;
 public:
-	cEquipaje(float _peso, string _DNIduenio)
-	{
-		CantidadEquipajes++; // sumo 1 a la cantidad de equipaje
-	} // constructor
-	~cEquipaje()
-	{
-		CantidadEquipajes--;
-	}; // destructor
+	cEquipaje(float _peso, string _DNIduenio);
+	~cEquipaje();
 	 // getters y setters
 	int getCantidadDeEquipaje()
 	{

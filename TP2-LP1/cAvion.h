@@ -15,14 +15,8 @@ private:
 	estado EstadoVuelo; //despegue, aterriza, pedir permiso, recibir permiso
 	friend class cListaAviones;
 public:
-	cAvion(string _IDAvion, int _CantidadPasajerosPermitidos, int _CantidadActualDePasajeros, float _PesoMaxTotal, float _pesoreal, int _cantidadaviones, estado _EstadoVuelo)
-	{
-		cantidadAviones++;
-	};
-	~cAvion()
-	{
-		cantidadAviones--;
-	};
+	cAvion(string _IDAvion, int _CantidadPasajerosPermitidos, int _CantidadActualDePasajeros, float _PesoMaxTotal, float _pesoreal, int _cantidadaviones, estado _EstadoVuelo);
+	~cAvion();
 
 	float PesoDelAvion();
 	bool ChequearCargaMaxima(); //verifica que no supere el peso

@@ -7,10 +7,10 @@ class cListaEquipaje
 {
 private:
 	cEquipaje** ListaEquipaje;
-	unsigned int ocupados;
-	unsigned int capacidad;
+	 int ocupados;
+	 int capacidad;
 public:
-	cListaEquipaje(unsigned int longitud = MAX);
+	cListaEquipaje(int longitud = MAX);
 	bool AgregarEquipaje(cEquipaje* _equipaje);
 	bool EliminarEquipaje(const string _DNIduenio);
 	float PesoTotalEquipaje();

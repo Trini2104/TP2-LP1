@@ -9,8 +9,11 @@ cAvion::cAvion(string _IDAvion, int _CantidadPasajerosPermitidos, int _CantidadA
 	this->PesoReal = _pesoreal;
 	this->cantidadAviones = _cantidadaviones;
 	this->EstadoVuelo = _EstadoVuelo;
+	cantidadAviones++;
 };
-cAvion::~cAvion() {};
+cAvion::~cAvion() {
+	cantidadAviones--;
+};
 int cAvion::cantidadAviones = 0;
 
 float cAvion::PesoDelAvion()
@@ -70,10 +73,10 @@ string cAvion::to_string()
 {
 	return
 	"ID del avion: " + IDAvion + "\n";
-	"Cantidad de pasajeros permitidos:" + std::to_string(CantidadPasajerosPermitidos) + "\n";
-	"Cantidad actual de pasajeros:" + std::to_string(CantidadActualDePasajeros) + "\n";
-	"peso maximo total permitido:" + std::to_string(PesoMaxTotal) + "\n";
-	"peso actual del avion:" + std::to_string(PesoReal) + "\n";
+	//"Cantidad de pasajeros permitidos:" + std::to_string(CantidadPasajerosPermitidos) + "\n";
+	//"Cantidad actual de pasajeros:" + std::to_string(CantidadActualDePasajeros) + "\n";
+	//"peso maximo total permitido:" + std::to_string(PesoMaxTotal) + "\n";
+	//"peso actual del avion:" + std::to_string(PesoReal) + "\n";
 
 }
 void cAvion::imprimir()

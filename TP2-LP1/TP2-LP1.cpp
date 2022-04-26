@@ -31,13 +31,21 @@ int main()
 	//creo que deberiamos hacer funciones que asignen el avion al aeroparque, y el vuelo al avion
 
 	//probamos dar permiso
-	aeroparque->DarPermiso();
-	//Probamos agragar equipaje
-	//probamos asociar equipaje
-	//PrimerPasajero->asociarListaEquipaje(ListaEquipajePrimerPasajero);
-	//bool cPasajero::AgregarEquipaje(EquipajeAgregar);
-
-
-
-
+	ListaDeAviones->AgregarAvion(avion1);
+	ListaDeAviones->AgregarAvion(avion2);
+	ListaDeAviones->AgregarAvion(avion3);
+	ListaDeAviones->AgregarAvion(avion4);
+	aeroparque->AsignarListaAviones(ListaDeAviones);
+	//aeroparque->DarPermiso(avion1); funciona :)
+	//aeroparque->Aterrizaje(avion3); fuciona :)
+	//aeroparque->Despegue(avion1);
+	ListaDeVuelos->AgregarVuelo(vuelo1);
+	ListaDeVuelos->AgregarVuelo(vuelo2);
+	ListaDeVuelos->AgregarVuelo(vuelo3);
+	ListaDeVuelos->AgregarVuelo(vuelo4);
+	aeroparque->AsignarListaVuelos(ListaDeVuelos);
+	//aeroparque->CantidadDeVuelosAterrizadosXDia();
+	//cout << " cantidad de vuelos aterrizados por dia: " << aeroparque->CantidadDeVuelosAterrizadosXDia() << endl;
+	//cout << " vuelos despegados en el dia:" << aeroparque->CantidadDeVuelosDespegadosXDia() << endl;
+	cout << " porcentaje de vuelos a horario:" << aeroparque->PorcentajeDeVuelosEnHorario() << endl;
 }

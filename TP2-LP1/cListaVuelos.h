@@ -7,12 +7,12 @@ class cListaVuelos
 {
 private:
 	cVuelo** ListaVuelos;
-	unsigned int ocupados;
-	unsigned int capacidad;
+	int ocupados;
+	int capacidad;
 public:
-	cListaVuelos(unsigned int longitud = MAX);
+	cListaVuelos(int longitud = MAX);
 	~cListaVuelos();
-	unsigned int getocupados()
+	int getocupados()
 	{
 		return ocupados;
 	}

@@ -11,38 +11,51 @@ cAeropuerto::cAeropuerto( string _IDAeropuerto, int _CapacidadDeAeropuerto) :IDA
 };
 
 cAeropuerto::~cAeropuerto() {};
+void cAeropuerto::AsignarListaVuelos(cListaVuelos* _ListaVuelos)
+{
+	this->ListaVuelos = _ListaVuelos;
 
-bool cAeropuerto::DarPermiso() //dependiendo de la capacidad del aeropuerto da o no permiso
+}
+void cAeropuerto::AsignarListaAviones(cListaAviones* _ListaAviones)
+{
+	this->ListaAviones = _ListaAviones;
+}
+bool cAeropuerto::DarPermiso(cAvion* _avion) //dependiendo de la capacidad del aeropuerto da o no permiso
 {
 		if (ListaAviones->getOcupados() < getCapacidadAeropuerto()) //  si la cantidad de aviones en el hangar es menor a la capacidad del mismo
-		{	Avion->setEstadoVuelo(RecibiendoPermisoParaAterrizar); //da el permiso
-			//ListaAviones->AgregarAvion(Avion);
+		{	_avion->setEstadoVuelo(RecibiendoPermisoParaAterrizar); //da el permiso
+			ListaAviones->AgregarAvion(_avion);// agrego el avion a la lista
+			_avion->imprimir();
 			return true;
 			
 		}
-		if(ListaAviones->getOcupados()>getCapacidadAeropuerto()) // si el hangar se encuentra al tope de su capacidad
+		else if(ListaAviones->getOcupados()>getCapacidadAeropuerto()) // si el hangar se encuentra al tope de su capacidad
 		{
-			Avion->setEstadoVuelo(NoRecibiendoPermisoParaAterrizar); //no da el permiso
+			_avion->setEstadoVuelo(NoRecibiendoPermisoParaAterrizar); //no da el permiso
 			return false;
 			throw new runtime_error("Hangar lleno"); //lanza la excepcion 
 		}
 }
-bool cAeropuerto::Aterrizaje()
+bool cAeropuerto::Aterrizaje(cAvion* _avion)
 {
-	if (Avion->getEstadoVuelo() == RecibiendoPermisoParaAterrizar) //si tiene el permiso para aterrizar
+	if (_avion->getEstadoVuelo() == PidiendoPermisoParaAterrizar) //si su estado es pidiendo permiso para aterrizar
 	{
-		ListaAviones->AgregarAvion(Avion); //le permite aterrizar en el aeropuerto y agrega un avion a la lista
-		Avion->setEstadoVuelo(Aterrizando); // modifico el estado del vuelo a aterrizado
-		return true;
+		if (ListaAviones->getOcupados() < getCapacidadAeropuerto())// y el hangar no esta lleno
+		{
+			ListaAviones->AgregarAvion(_avion); //le permite aterrizar en el aeropuerto y agrega un avion a la lista
+			_avion->setEstadoVuelo(Aterrizando); // modifico el estado del vuelo a aterrizado
+			return true;
+		}
+		else return false; // retorno falso si el hangar esta lleno
 	}
 	else
 		return false; // retorno falso si no tiene permiso para aterrizar
 }
-bool cAeropuerto::Despegue()
+bool cAeropuerto::Despegue(cAvion* _avion)
 {
-	if (Avion->getEstadoVuelo() == Despegando) //si el vuelo esta despegando se quita un avion de la lista 
+	if (_avion->getEstadoVuelo() == Despegando) //si el vuelo esta despegando se quita un avion de la lista 
 	{
-		ListaAviones->EliminarAvion(Avion);
+		ListaAviones->EliminarAvion(_avion);
 		return true;
 	}
 	else
@@ -93,7 +106,7 @@ float cAeropuerto::PorcentajeDeVuelosEnHorario()
 	int cantidadvuelos = ListaVuelos->getocupados();
 	for (int i = 0; i < cantidadvuelos; i++)
 	{
-		if (ListaVuelos->getListaVuelos(i)->getEstadoFehca() == EnHoario) //ingresa a cada vuelo, si su estado es en horario sumo 1
+		if (ListaVuelos->getListaVuelos(i)->getEstadoFecha() == EnHoario) //ingresa a cada vuelo, si su estado es en horario sumo 1
 		{
 			contadorenhorario++;
 		}

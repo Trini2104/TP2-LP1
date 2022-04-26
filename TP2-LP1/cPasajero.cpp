@@ -10,8 +10,11 @@ cPasajero::cPasajero(string _DNI, string _nombre, string _apellido, string _NumV
 	equipaje = NULL;
 	FechaYHoraVuelo = NULL;
 	ListaDeValijasATransportar = NULL;
+	cantidadPasajeros++; //suma 1 pasajero a la cant. pasajeros
 };
-cPasajero::~cPasajero() {};
+cPasajero::~cPasajero() {
+	cantidadPasajeros--;
+};
 int cPasajero::cantidadPasajeros = 0;
 
 bool cPasajero::asociarListaEquipaje(cListaEquipaje* _ListaEquipaje)

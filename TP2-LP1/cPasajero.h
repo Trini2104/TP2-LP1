@@ -21,14 +21,8 @@ private:
 	friend class cListaEquipaje;
 	friend class cListaPasajeros;
 public:
-	cPasajero(string _DNI, string _nombre, string _apellido, string _NumVuelo, string _NumAsiento)
-	{
-		cantidadPasajeros++; //contabiliza la cantidad de veces que se instancio
-	};
-	~cPasajero()
-	{
-		cantidadPasajeros--; //cada vez que libere memoria elimina un objeto del contador. 
-	};
+	cPasajero(string _DNI, string _nombre, string _apellido, string _NumVuelo, string _NumAsiento);
+	~cPasajero();
 
 	//metodos:
 	bool asociarListaEquipaje(cListaEquipaje* _ListaEquipaje);

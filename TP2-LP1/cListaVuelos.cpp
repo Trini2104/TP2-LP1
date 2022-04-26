@@ -3,11 +3,11 @@
 #include "cListaVuelos.h"
 using namespace std;
 
-cListaVuelos::cListaVuelos(unsigned int longitud)
+cListaVuelos::cListaVuelos( int longitud)
 {
 	capacidad = longitud;
 	this->ListaVuelos = new cVuelo * [longitud];
-	for (unsigned int i = 0; i < longitud; i++)
+	for ( int i = 0; i < longitud; i++)
 		this->ListaVuelos[i] = NULL;
 	ocupados = 0;
 };

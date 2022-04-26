@@ -4,7 +4,6 @@ class cAvion;
 #include <iostream>
 #include <string>
 using namespace std;
-unsigned int CantidadVuelos = 0;
 
 class cVuelo
 {
@@ -20,15 +19,8 @@ private:
 	cListaEquipaje* ListaEquipajeVuelo;//equipaje del vuelo
 	friend class cListaVuelos;
 public:
-	cVuelo(string _numVuelo, estado _EstadoVuelo, tipovuelo _TipoVuelo, destinos _aeropuertoDestino)
-	{
-		CantidadVuelos++;
-
-	};//agregar todos los punteros
-	~cVuelo()
-	{
-		CantidadVuelos--;
-	}
+	cVuelo(string _numVuelo, estado _EstadoVuelo, tipovuelo _TipoVuelo, destinos _aeropuertoDestino);//agregar todos los punteros
+	~cVuelo();
 	void setEstadoFecha(estado _estado)
 	{
 		if (_estado == RecibiendoPermisoParaAterrizar || _estado == RecibiendoPermisoParaDespegar) //si pudo despegar 
@@ -40,7 +32,7 @@ public:
 			fechayhoraReal->setestadohorario(ConDemora); //se encuentra con demora
 		}
 	}
-	estadoHorario getEstadoFehca()
+	estadoHorario getEstadoFecha()
 	{
 		return fechayhoraReal->estado;
 	}

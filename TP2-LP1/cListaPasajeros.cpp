@@ -2,11 +2,11 @@
 #include<string>
 #include "cListaPasajeros.h"
 using namespace std;
-cListaPasajeros::cListaPasajeros(unsigned int longitud)
+cListaPasajeros::cListaPasajeros( int longitud)
 {
 	capacidad = longitud;
 	this->ListaPasajeros = new cPasajero * [longitud];
-	for (unsigned int i = 0; i < longitud; i++)
+	for (int i = 0; i < longitud; i++)
 		this->ListaPasajeros[i] = NULL;
 
 	ocupados = 0;
