@@ -25,7 +25,7 @@ public:
 	{
 		if (_estado == RecibiendoPermisoParaAterrizar || _estado == RecibiendoPermisoParaDespegar) //si pudo despegar 
 		{
-			fechayhoraReal->setestadohorario(EnHoario); //se encuentra en horario
+			fechayhoraReal->setestadohorario(EnHorario); //se encuentra en horario
 		}
 		if (_estado == NoRecibiendoPermisoParaAterrizar || _estado == NoRecibiendoPermisoParaDespegar) //si no pudo
 		{
@@ -64,8 +64,12 @@ public:
 		return EstadoVuelo;
 	}
 	friend ostream &operator<<(ostream& out, cVuelo* vuelo);
+	void asociarAvionConVuelo(cAvion* _avion);
 	void AsignarListaPasajeros(cListaPasajeros* _ListaPasajeros);
+	void AsignarListaEquipajeDelVuelo(cListaEquipaje* _ListaEquipajeDelVuelo);
+	void DesasociarListaEquipajeDelVuelo();
 	void DesasociarListaPasajeros();
+	void DesasociarAvionConVuelo();
 	string to_string();
 	void imprimir();
 };

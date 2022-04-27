@@ -16,14 +16,14 @@ cAvion::~cAvion() {
 };
 int cAvion::cantidadAviones = 0;
 
-float cAvion::PesoDelAvion()
+/*float cAvion::PesoDelAvion()
 {
 	float PesosPasajeros = 0;
 	float PesoEquipaje = 0;
 	float contador = PesosPasajeros + PesoEquipaje;
 	return contador;
-}
-void cAvion::setPesoReaal(float _peso)
+}*/
+void cAvion::setPesoReal(float _peso)
 {
 	this->PesoReal = _peso;
 };
@@ -31,16 +31,15 @@ void cAvion::setEstadoVuelo(estado _estadovuelo)
 {
 	this->EstadoVuelo = _estadovuelo;
 }
-bool cAvion::ChequearCargaMaxima() //si el peso total recibido por el setter desde vuelo el menor al maximo puede despegar
+bool cAvion::ChequearCargaMaxima() 
 {
-	if (PesoReal < PesoMaxTotal)
+	if (PesoReal < PesoMaxTotal)//si el peso total es menor al maximo puede despegar
 	{
-		setEstadoVuelo(RecibiendoPermisoParaDespegar);
 		return true;
 	}
 	else
 	{
-		setEstadoVuelo(NoRecibiendoPermisoParaAterrizar);
+		//throw new runtime_error(" EL AVION ESTA EXCEDIDO DE PESO"); BUSCAR COMO SE LANZA UNA EXCEPCION
 		return false;
 	}
 }
@@ -71,12 +70,17 @@ bool cAvion::Despegar() //si tiene permiso despega
 }
 string cAvion::to_string()
 {
+	string cantpp = "";
+	cantpp= (std::to_string(CantidadPasajerosPermitidos));
+	string cantap(std::to_string(CantidadActualDePasajeros));
+	string pmtp = (std::to_string(PesoMaxTotal));
+	string pada = (std::to_string(PesoReal));
 	return
 	"ID del avion: " + IDAvion + "\n";
-	//"Cantidad de pasajeros permitidos:" + std::to_string(CantidadPasajerosPermitidos) + "\n";
-	//"Cantidad actual de pasajeros:" + std::to_string(CantidadActualDePasajeros) + "\n";
-	//"peso maximo total permitido:" + std::to_string(PesoMaxTotal) + "\n";
-	//"peso actual del avion:" + std::to_string(PesoReal) + "\n";
+	"Cantidad de pasajeros permitidos:" + cantpp + "\n";
+	"Cantidad actual de pasajeros:" +  cantap+ "\n";
+	"peso maximo total permitido:" +pmtp + "\n";
+	"peso actual del avion:" + pada + "\n";
 
 }
 void cAvion::imprimir()

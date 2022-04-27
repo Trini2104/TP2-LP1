@@ -16,26 +16,32 @@ cPasajero::~cPasajero() {
 	cantidadPasajeros--;
 };
 int cPasajero::cantidadPasajeros = 0;
-
-bool cPasajero::asociarListaEquipaje(cListaEquipaje* _ListaEquipaje)
+void cPasajero::asignarFechaYHoraVuelo(cFecha* _FechaYHoraVuelo)
 {
-	
-
-	if (this->ListaDeValijasATransportar != NULL)
-	{
-		this->ListaDeValijasATransportar = _ListaEquipaje;
-		return true;
-	}
-	else return false;
+	this->FechaYHoraVuelo = _FechaYHoraVuelo;
+}
+void cPasajero::desasociarasignarFechaYHoraVuelo()
+{
+	FechaYHoraVuelo = NULL;
+}
+void cPasajero::AsignarListaEquipajeDelPasajero(cListaEquipaje* _ListaEquipajeDelPasajero)
+{
+	this->ListaDeValijasATransportar = _ListaEquipajeDelPasajero; // le paso la lista del equipaje de cada pasajero
+}
+void cPasajero::desasociarAsignarListaEquipajeDelPasajero()
+{
+	ListaDeValijasATransportar = NULL;
+}
+void cPasajero::asignarequipaje(cEquipaje* _equipaje)
+{
+	this->equipaje = _equipaje;
 }
 void cPasajero::desasociarEquipaje()
 {
-	ListaDeValijasATransportar = NULL; //esto a chequear
+	 equipaje = NULL;
 };
-bool cPasajero::AgregarEquipaje(cEquipaje* _equipaje)
-{
-	//(*ListaeValijasATransportar)[0]->getPesoDelEquipaje();
-	
+bool cPasajero::AgregarEquipajePasajero(cEquipaje* _equipaje)
+{	
 	if (ListaDeValijasATransportar->PesoTotalEquipaje() + _equipaje->getPesoDelEquipaje() < 25) //si la suma de todo su equipaje mas el que desea agregar es menor a todo su equipaje puede agregarlo
 	{
 		ListaDeValijasATransportar->AgregarEquipaje(_equipaje);
@@ -46,14 +52,13 @@ bool cPasajero::AgregarEquipaje(cEquipaje* _equipaje)
 		return false;
 	}
 };
-bool cPasajero::EliminarEquipaje(cEquipaje* _equipaje)
+bool cPasajero::EliminarEquipajePasajero(cEquipaje* _equipaje)
 {
-	if (ListaDeValijasATransportar->EliminarEquipaje(_equipaje->getDNIduenio()) == true)
+	if (ListaDeValijasATransportar->EliminarEquipaje(_equipaje->getPesoDelEquipaje(),_equipaje->getDNIduenio()) == true)
 		return true;
 	else return false;
 
 }
-
 unsigned int cPasajero::getEquipaje()
 {
 	return ListaDeValijasATransportar->getocupados();

@@ -12,9 +12,9 @@ private:
 public:
 	cListaEquipaje(int longitud = MAX);
 	bool AgregarEquipaje(cEquipaje* _equipaje);
-	bool EliminarEquipaje(const string _DNIduenio);
+	bool EliminarEquipaje(float _peso, const string _DNIduenio);
 	float PesoTotalEquipaje();
-	unsigned int getocupados()
+	int getocupados()
 	{
 		return ocupados;
 	}

@@ -114,7 +114,7 @@ float cAeropuerto::PorcentajeDeVuelosEnHorario()
 	int cantidadvuelos = ListaVuelos->getocupados();
 	for (int i = 0; i < cantidadvuelos; i++)
 	{
-		if (ListaVuelos->getListaVuelos(i)->getEstadoFecha() == EnHoario) //ingresa a cada vuelo, si su estado es en horario sumo 1
+		if (ListaVuelos->getListaVuelos(i)->getEstadoFecha() == EnHorario) //ingresa a cada vuelo, si su estado es en horario sumo 1
 		{
 			contadorenhorario++;
 		}

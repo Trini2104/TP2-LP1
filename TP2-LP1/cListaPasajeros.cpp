@@ -64,13 +64,14 @@ bool cListaPasajeros::EliminarPasajero(string _DNIPasajero)
 			{
 				delete this->ListaPasajeros[i];
 				ListaPasajeros[i] = NULL;
-
+				ocupados--;
 				ordenar();
 				return true;
 			}
-			else return false;
+			
 		}
 	}
+	else return false;
 
 };
 cListaPasajeros::~cListaPasajeros()

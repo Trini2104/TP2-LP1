@@ -25,7 +25,11 @@ public:
 	~cPasajero();
 
 	//metodos:
-	bool asociarListaEquipaje(cListaEquipaje* _ListaEquipaje);
+	void asignarFechaYHoraVuelo(cFecha* _FechaYHoraVuelo);
+	void desasociarasignarFechaYHoraVuelo();
+	void AsignarListaEquipajeDelPasajero(cListaEquipaje* _ListaEquipajeDelPasajero);
+	void desasociarAsignarListaEquipajeDelPasajero();
+	void asignarequipaje(cEquipaje* _equipaje);
 	void desasociarEquipaje();
 	float getPesoTotalequipaje()
 	{
@@ -62,18 +66,18 @@ public:
 		return ListaDeValijasATransportar;
 	}
 	
-	bool AgregarEquipaje(cEquipaje* _equipaje);//chequea que el equipaje total no supere los 25kg p/persona y si puede agregar mas
+	bool AgregarEquipajePasajero(cEquipaje* _equipaje);//chequea que el equipaje total no supere los 25kg p/persona y si puede agregar mas
 	bool operator+(cEquipaje* _equipaje)
 	{
-		if (AgregarEquipaje(_equipaje) == true)
+		if (AgregarEquipajePasajero(_equipaje) == true)
 			return true;
 		else return false;
 
 	}
-	bool EliminarEquipaje(cEquipaje* _equipaje);
+	bool EliminarEquipajePasajero(cEquipaje* _equipaje);
 	bool operator-(cEquipaje* _equipaje)
 	{
-		if (EliminarEquipaje(_equipaje) == true)
+		if (EliminarEquipajePasajero(_equipaje) == true)
 			return true;
 		else return false;
 	}

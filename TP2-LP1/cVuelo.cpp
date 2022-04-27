@@ -20,8 +20,6 @@ cVuelo::~cVuelo() {
 	CantidadVuelos--;
 };
 int cVuelo::CantidadVuelos = 0;
-
-
 string cVuelo::ObtenerDatosPasajero(const string _DNIPasajero) 
 {
 	string  datospasajero;
@@ -31,7 +29,7 @@ string cVuelo::ObtenerDatosPasajero(const string _DNIPasajero)
 	{
 		if ((*ListaPasajeros)[i]!= NULL && (*ListaPasajeros)[i]->getDNI() == _DNIPasajero) //ingresa a cada pasajero de la lista y busca al pasajero por su dni
 		{
-			cant = (*ListaPasajeros)[i]->getEquipaje(); // le asigno a cant la cantidad de equipja que tiene ese pasajero sub i
+			cant = (*ListaPasajeros)[i]->getEquipaje(); // le asigno a cant la cantidad de equipaje que tiene ese pasajero sub i
 			peso = +(*ListaPasajeros)[i]->getPesoTotalequipaje();
 			string cantequipaje(std::to_string(cant)); //convierte a string las cantidad de equipaje del pasajero
 			string pesoequipaje(std::to_string(peso)); //convierte a string el peso de todo el equipaje
@@ -57,11 +55,11 @@ void cVuelo::NumeroDeVueloRandom()
 	this->setNumeroVuelo(numVuelo); //ingreso el numero random a mi variable
 
 };
-bool cVuelo::AgregarPasajeroAlVuelo(cPasajero* _pasajero)  //agrega un pasajero desde el vuelo a su lista de pasajeros
+bool cVuelo::AgregarPasajeroAlVuelo(cPasajero* _pasajero)  //agrega un pasajero al vuelo, osea a la lista de pasajeros de ese vuelo
 {
-	if (_pasajero->getNumVuelo() == NumVuelo) // si el numero de vuelo que tiene el pasajero coincide con el del vuelo al cual yo lo quiero agregar
+	if (avion->getCantidadActualDePasajeros()< avion->getCantidadPasajerosPermitidos()) // si en el avion asociado al vuelo, hay lugar
 	{
-		if (ListaPasajeros->AgregarPasajero(_pasajero) == true) // si lo pude agregar ya que tenia capacidad
+		if (ListaPasajeros->AgregarPasajero(_pasajero) == true) // agrego el pasajero al vuelo
 		{
 			return true; // retorno verdadero, sino retorno falso
 		}
@@ -100,7 +98,7 @@ void cVuelo::pesototaldelvuelo()
         //suma el peso total de todas las valijas 
 	}
 	PesoTotal = PesoValijas + pesopasajeros; //suma el peso de los pasajeros y de las valijas
-	this->avion->setPesoReaal(PesoTotal); //ingresa el peso total del vuelo a su avion correspondiente
+	this->avion->setPesoReal(PesoTotal); //ingresa el peso total del vuelo a su avion correspondiente
 }
 ostream& operator<<(ostream &out, cVuelo* vuelo)
 {
@@ -112,6 +110,14 @@ ostream& operator<<(ostream &out, cVuelo* vuelo)
 	
 	return out;
 }
+void cVuelo::asociarAvionConVuelo(cAvion* _avion)
+{
+	this->avion = _avion;
+}
+void cVuelo::DesasociarAvionConVuelo()
+{
+	avion = NULL;
+}
 void cVuelo::AsignarListaPasajeros(cListaPasajeros* _ListaPasajeros)
 {
 	this->ListaPasajeros = _ListaPasajeros;
@@ -120,3 +126,11 @@ void cVuelo::DesasociarListaPasajeros()
 {
 	ListaPasajeros = NULL;
 };
+void cVuelo:: AsignarListaEquipajeDelVuelo(cListaEquipaje* _ListaEquipajeDelVuelo)
+{
+	this->ListaEquipajeVuelo = _ListaEquipajeDelVuelo;
+}
+void cVuelo::DesasociarListaEquipajeDelVuelo()
+{
+	ListaEquipajeVuelo = NULL;
+}
