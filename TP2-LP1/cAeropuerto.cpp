@@ -30,19 +30,25 @@ void cAeropuerto::DesasociarListaAviones()
 };
 bool cAeropuerto::DarPermiso(cAvion* _avion) //dependiendo de la capacidad del aeropuerto da o no permiso
 {
+	try
+	{
 		if (ListaAviones->getOcupados() < getCapacidadAeropuerto()) //  si la cantidad de aviones en el hangar es menor a la capacidad del mismo
-		{	_avion->setEstadoVuelo(RecibiendoPermisoParaAterrizar); //da el permiso
+		{
+			_avion->setEstadoVuelo(RecibiendoPermisoParaAterrizar); //da el permiso
 			ListaAviones->AgregarAvion(_avion);// agrego el avion a la lista
 			_avion->imprimir();
 			return true;
-			
+
 		}
-		else if(ListaAviones->getOcupados()>getCapacidadAeropuerto()) // si el hangar se encuentra al tope de su capacidad
-		{
-			_avion->setEstadoVuelo(NoRecibiendoPermisoParaAterrizar); //no da el permiso
-			return false;
-			throw new runtime_error("Hangar lleno"); //lanza la excepcion 
-		}
+		if (ListaAviones->getOcupados() > getCapacidadAeropuerto()) throw " HANGAR LLENO"; // si el hangar se encuentra al tope de su capacidad
+		
+	}
+	catch (const char * msj)
+	{
+		cout << msj << endl;
+		_avion->setEstadoVuelo(NoRecibiendoPermisoParaAterrizar); //no da el permiso
+		return false;
+	}
 }
 bool cAeropuerto::Aterrizaje(cAvion* _avion)
 {

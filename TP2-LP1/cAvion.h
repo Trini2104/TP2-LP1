@@ -17,8 +17,6 @@ private:
 public:
 	cAvion(string _IDAvion, int _CantidadPasajerosPermitidos, int _CantidadActualDePasajeros, float _PesoMaxTotal, float _pesoreal, int _cantidadaviones, estado _EstadoVuelo);
 	~cAvion();
-
-	//float PesoDelAvion();
 	bool ChequearCargaMaxima(); //verifica que no supere el peso
 	bool AntesDeSalirDelAeropuerto(); //verifica que se cumplan la CantidadPasajerosPermitidos y PesoMaxTotal
 	bool Despegar(); //Cambia el estado del avion

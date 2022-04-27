@@ -21,6 +21,7 @@ int main()
 	cListaEquipaje* ListaEquipajePasajero1 = new cListaEquipaje(MAX);
 	ListaEquipajePasajero1->AgregarEquipaje(EquipajePasajero1);
 	Pasajero1->AsignarListaEquipajeDelPasajero(ListaEquipajePasajero1);
+	//PRUEBA DE PASAJEROS
 	/*Pasajero1->AgregarEquipajePasajero(EquipajePasajero1plus);
 	Pasajero1->EliminarEquipajePasajero(EquipajePasajero1plus);*/
 
@@ -80,7 +81,7 @@ int main()
 	ListaEquipajePasajero9->AgregarEquipaje(EquipajePasajero9);
 	Pasajero3->AsignarListaEquipajeDelPasajero(ListaEquipajePasajero9);
 
-	cAvion* avion1 = new cAvion("AV55", 70, 68,2500, 1750.6,2, Despegando);
+	cAvion* avion1 = new cAvion("AV55", 70, 68, 1750.6, 2500,2, Despegando);
 	cAvion* avion2 = new cAvion("AV299", 75, 60, 2500, 1540.6, 2, Aterrizando);
 	cAvion* avion3 = new cAvion("AV3665", 55, 55, 2500, 1950.6, 2, PidiendoPermisoParaAterrizar);
 	cAvion* avion4 = new cAvion("AV4885", 80, 48, 2500, 1110.6, 2, PidiendoPermisoParaDespegar);
@@ -94,7 +95,7 @@ int main()
 	cListaPasajeros* ListaDePasajeros = new cListaPasajeros(MAX);
 	cListaPasajeros* ListaDePasajeros2 = new cListaPasajeros(MAX);
 	cListaPasajeros* ListaDePasajeros3 = new cListaPasajeros(MAX);
-	cAeropuerto* aeroparque = new cAeropuerto("AE58961565", 96);
+	cAeropuerto* aeroparque = new cAeropuerto("AE58961565", 0);
 	
 	ListaEquipajeDelVuelo->AgregarEquipaje(EquipajePasajero1);
 	ListaEquipajeDelVuelo->AgregarEquipaje(EquipajePasajero2);
@@ -107,17 +108,6 @@ int main()
 	ListaEquipajeDelVuelo->AgregarEquipaje(EquipajePasajero9);
 
 	vuelo1->AsignarListaEquipajeDelVuelo(ListaEquipajeDelVuelo);
-
-	//PRUEBA DE AEROPUERTO TODO OK
-	//aeroparque->DarPermiso(avion1); funciona :)
-	//aeroparque->Aterrizaje(avion3); funciona :)
-	//aeroparque->Despegue(avion1);
-	//aeroparque->CantidadDeVuelosAterrizadosXDia();
-	//cout << " cantidad de vuelos aterrizados por dia: " << aeroparque->CantidadDeVuelosAterrizadosXDia() << endl;
-	//cout << " vuelos despegados en el dia:" << aeroparque->CantidadDeVuelosDespegadosXDia() << endl;
-	//cout << " porcentaje de vuelos a horario:" << aeroparque->PorcentajeDeVuelosEnHorario() << endl;
-	//aeroparque->CantidadTotalDePasajerosXDia(); funciona:)
-	//probamos dar permiso
 	ListaDeAviones->AgregarAvion(avion1);
 	ListaDeAviones->AgregarAvion(avion2);
 	ListaDeAviones->AgregarAvion(avion3);
@@ -147,15 +137,25 @@ int main()
 	aeroparque->AsignarListaVuelos(ListaDeVuelos);
 	vuelo1->asociarAvionConVuelo(avion1);
 
+	//PRUEBA DE AEROPUERTO TODO OK
+	aeroparque->DarPermiso(avion1); 
+	//aeroparque->Aterrizaje(avion3); funciona :)
+	//aeroparque->Despegue(avion1);
+	//aeroparque->CantidadDeVuelosAterrizadosXDia();
+	//cout << " cantidad de vuelos aterrizados por dia: " << aeroparque->CantidadDeVuelosAterrizadosXDia() << endl;
+	//cout << " vuelos despegados en el dia:" << aeroparque->CantidadDeVuelosDespegadosXDia() << endl;
+	//cout << " porcentaje de vuelos a horario:" << aeroparque->PorcentajeDeVuelosEnHorario() << endl;
+	//aeroparque->CantidadTotalDePasajerosXDia(); funciona:)
+	
 	//PROBAMOS VUELO
-	//vuelo1->ObtenerDatosPasajero(Pasajero1->getDNI()); //PROBAR DE NUEVO NO PUEDO ASIGNATR EL EQUIPAJE A LA LISTA DE EQUIPAJE DE CADA PASAJERO 
+	//cout << " " << vuelo1->ObtenerDatosPasajero(Pasajero1->getDNI()) << endl; FUNCIONA :)
 	//vuelo1->AgregarPasajeroAlVuelo(Pasajero8); FUNCIONA :)
 	//vuelo1->CambiarPasajeroAlVuelo(Pasajero1, Pasajero6); FUNCIONA :)
 	//vuelo1->EliminarPasajeroAlVuelo(Pasajero2);FUNCIONA :)
-	//vuelo1->pesototaldelvuelo(); hay que solucionar lo de la lista equipaje para poder probarla
+	//vuelo1->pesototaldelvuelo(); // FUNCIONA :)
 
 	//PROBAMOS AVION
-	// avion1->ChequearCargaMaxima(); //FUNCIONA :)
+	//avion1->ChequearCargaMaxima();
 	//avion1->AntesDeSalirDelAeropuerto(); FUNCIONA
 	//avion2->Despegar(); FUNCIONA
 	//avion1->imprimir();

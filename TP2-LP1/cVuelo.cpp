@@ -31,11 +31,8 @@ string cVuelo::ObtenerDatosPasajero(const string _DNIPasajero)
 		{
 			cant = (*ListaPasajeros)[i]->getEquipaje(); // le asigno a cant la cantidad de equipaje que tiene ese pasajero sub i
 			peso = +(*ListaPasajeros)[i]->getPesoTotalequipaje();
-			string cantequipaje(std::to_string(cant)); //convierte a string las cantidad de equipaje del pasajero
-			string pesoequipaje(std::to_string(peso)); //convierte a string el peso de todo el equipaje
-			datospasajero += "PASAJERO: " + (*ListaPasajeros)[i]->getDNI() + (*ListaPasajeros)[i]->getapellido() + cantequipaje + pesoequipaje;
-			//si encuentra al pasajero por su dni guarda todos sus datos en un string
-			return datospasajero;
+			datospasajero += " PASAJERO: "+ (*ListaPasajeros)[i]->getnombre() + " " + (*ListaPasajeros)[i]->getapellido() + " DNI: " + (*ListaPasajeros)[i]->getDNI() + " CANTIDAD DE EQUIPAJE: " + std::to_string(cant) + " PESO DEL EQUIPAJE: " + std::to_string(peso);
+			return datospasajero;//si encuentra al pasajero por su dni guarda todos sus datos en un string
 		}
 		else
 		{

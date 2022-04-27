@@ -34,13 +34,17 @@ void cAvion::setEstadoVuelo(estado _estadovuelo)
 }
 bool cAvion::ChequearCargaMaxima() 
 {
-	if (PesoReal < PesoMaxTotal)//si el peso total es menor al maximo puede despegar
+	try
 	{
-		return true;
+		if (PesoReal < PesoMaxTotal)//si el peso total es menor al maximo puede despegar
+		{
+			return true;
+		}
+		if (PesoReal > PesoMaxTotal) throw "EL AVION ESTA EXCEDIDO DE PESO ";
 	}
-	else
+	catch (const char * msj)
 	{
-		//throw new runtime_error(" EL AVION ESTA EXCEDIDO DE PESO"); BUSCAR COMO SE LANZA UNA EXCEPCION
+		cout << msj<<  endl;
 		return false;
 	}
 }
