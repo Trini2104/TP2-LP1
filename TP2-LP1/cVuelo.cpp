@@ -131,3 +131,11 @@ void cVuelo::DesasociarListaEquipajeDelVuelo()
 {
 	ListaEquipajeVuelo = NULL;
 }
+void cVuelo::AsignarFechaYhora(cFecha* _fechayhora)
+{
+	this->fechayhoraReal = _fechayhora;
+}
+void cVuelo::desasignarFechaYhora()
+{
+	fechayhoraReal = NULL;
+}

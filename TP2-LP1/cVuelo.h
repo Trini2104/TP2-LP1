@@ -70,6 +70,8 @@ public:
 	void DesasociarListaEquipajeDelVuelo();
 	void DesasociarListaPasajeros();
 	void DesasociarAvionConVuelo();
+	void AsignarFechaYhora(cFecha* _fechayhora);
+	void desasignarFechaYhora();
 	string to_string();
 	void imprimir();
 };

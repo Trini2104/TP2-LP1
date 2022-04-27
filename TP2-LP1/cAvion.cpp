@@ -17,13 +17,6 @@ cAvion::~cAvion() {
 };
 int cAvion::cantidadAviones = 0;
 
-/*float cAvion::PesoDelAvion()
-{
-	float PesosPasajeros = 0;
-	float PesoEquipaje = 0;
-	float contador = PesosPasajeros + PesoEquipaje;
-	return contador;
-}*/
 void cAvion::setPesoReal(float _peso)
 {
 	this->PesoReal = _peso;
@@ -45,6 +38,7 @@ bool cAvion::ChequearCargaMaxima()
 	catch (const char * msj)
 	{
 		cout << msj<<  endl;
+		
 		return false;
 	}
 }
