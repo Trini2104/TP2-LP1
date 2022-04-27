@@ -1,5 +1,6 @@
 #include<iostream>
 #include<string>
+#include<sstream>
 #include"cAvion.h"
 using namespace std;
 
@@ -70,20 +71,15 @@ bool cAvion::Despegar() //si tiene permiso despega
 }
 string cAvion::to_string()
 {
-	string cantpp = "";
-	cantpp= (std::to_string(CantidadPasajerosPermitidos));
-	string cantap(std::to_string(CantidadActualDePasajeros));
-	string pmtp = (std::to_string(PesoMaxTotal));
-	string pada = (std::to_string(PesoReal));
 	return
-	"ID del avion: " + IDAvion + "\n";
-	"Cantidad de pasajeros permitidos:" + cantpp + "\n";
-	"Cantidad actual de pasajeros:" +  cantap+ "\n";
-	"peso maximo total permitido:" +pmtp + "\n";
-	"peso actual del avion:" + pada + "\n";
+	"ID del avion: " + IDAvion + "\n"+
+	"Cantidad de pasajeros permitidos:" + std::to_string(CantidadPasajerosPermitidos) + "\n"+
+	"Cantidad actual de pasajeros:" + std::to_string(CantidadActualDePasajeros) + "\n"+
+	"peso maximo total permitido:" + std::to_string(PesoMaxTotal) + "\n"+
+	"peso actual del avion:" + std::to_string(PesoReal) + "\n";
 
 }
 void cAvion::imprimir()
 {
-	cout << this->to_string() << endl;
+	cout << to_string() << endl;
 }

@@ -109,7 +109,7 @@ int main()
 	vuelo1->AsignarListaEquipajeDelVuelo(ListaEquipajeDelVuelo);
 
 	//PRUEBA DE AEROPUERTO TODO OK
-	// //aeroparque->DarPermiso(avion1); funciona :)
+	//aeroparque->DarPermiso(avion1); funciona :)
 	//aeroparque->Aterrizaje(avion3); funciona :)
 	//aeroparque->Despegue(avion1);
 	//aeroparque->CantidadDeVuelosAterrizadosXDia();

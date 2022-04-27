@@ -70,8 +70,8 @@ string cPasajero::to_string()
 		"Apellido: " + apellido + "\n" +
 		"DNI: " + DNI + "\n" +
 		"Numero de vuelo: " + NumVuelo + "\n" +
-		"Numero de asiento: " + NumAsiento + "\n";
-	    "Cantidad de equipaje: " + std::to_string(equipaje->getCantidadDeEquipaje()) +"\n";
+		"Numero de asiento: " + NumAsiento + "\n"+
+	    "Cantidad de equipaje: " + std::to_string(equipaje->getCantidadDeEquipaje()) +"\n"+
 		"Peso del equipaje: " + std::to_string(equipaje->getPesoDelEquipaje()) + "\n";
 
 }

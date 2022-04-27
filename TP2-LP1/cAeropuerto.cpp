@@ -127,7 +127,7 @@ float cAeropuerto::PorcentajeDeVuelosEnHorario()
 string cAeropuerto::to_string()
 {
 	return
-	"ID del aeropuerto" + IDAeropuerto + "\n";
+	"ID del aeropuerto" + IDAeropuerto + "\n"+
 	"Capacidad del aeropuerto:" + std::to_string(CapacidadDeAeropuerto) + "\n";
 }
 void cAeropuerto::imprimir()
