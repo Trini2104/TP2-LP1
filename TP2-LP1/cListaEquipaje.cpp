@@ -76,8 +76,8 @@ cListaEquipaje::~cListaEquipaje()
 {
 	for (int i = 0; i < capacidad; i++)
 	{
-		if (this->ListaEquipaje[i] != NULL)
-			delete ListaEquipaje[i];
+		this->ListaEquipaje[i]= NULL;
+			//delete ListaEquipaje[i];
 	}
 	delete[]this->ListaEquipaje;
 	capacidad = 0;

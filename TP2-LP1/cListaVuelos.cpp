@@ -25,8 +25,8 @@ cListaVuelos::~cListaVuelos()
 {
 	for (int i = 0; i < capacidad; i++)
 	{
-		if (this->ListaVuelos[i] != NULL)
-			delete ListaVuelos[i];
+		this->ListaVuelos[i] = NULL;
+			//delete ListaVuelos[i];
 	}
 	delete[]this->ListaVuelos;
 	capacidad = 0;

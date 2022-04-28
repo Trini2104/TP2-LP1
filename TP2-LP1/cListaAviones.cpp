@@ -57,8 +57,8 @@ cListaAviones::~cListaAviones()
 {
 	for (int i = 0; i < capacidad; i++)
 	{
-		if (this->ListaAviones[i] != NULL)
-			delete ListaAviones[i];
+		this->ListaAviones[i] = NULL;
+			//delete ListaAviones[i];
 	}
 	delete[]this->ListaAviones;
 	capacidad = 0;

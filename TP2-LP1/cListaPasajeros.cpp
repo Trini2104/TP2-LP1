@@ -78,8 +78,8 @@ cListaPasajeros::~cListaPasajeros()
 {
 	for (int i = 0; i < capacidad; i++)
 	{
-		if (this->ListaPasajeros[i] != NULL)
-			delete this->ListaPasajeros[i];
+		this->ListaPasajeros[i] = NULL;
+			//delete this->ListaPasajeros[i];
 	}
 	delete[]this->ListaPasajeros;
 	capacidad = 0;

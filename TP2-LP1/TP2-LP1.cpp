@@ -193,39 +193,6 @@ int main()
 	//avion1->AntesDeSalirDelAeropuerto(); FUNCIONA
 	//avion2->Despegar(); FUNCIONA
 	//avion1->imprimir();
-
-	delete ListaDeAviones;
-	delete ListaDeVuelos;
-	delete ListaEquipajeDelVuelo1;
-	delete ListaEquipajeDelVuelo2;
-	delete ListaEquipajeDelVuelo3;
-	delete ListaDePasajeros;
-	delete ListaDePasajeros2;
-	delete ListaDePasajeros3;
-
-	delete aeroparque;
-
-	delete Pasajero1;
-	delete Pasajero2;
-	delete Pasajero3;
-	delete Pasajero4;
-	delete Pasajero5;
-	delete Pasajero6;
-	delete Pasajero7;
-	delete Pasajero8;
-	delete Pasajero9;
-
-	delete EquipajePasajero1;
-	delete EquipajePasajero1plus;
-	delete EquipajePasajero2;
-	delete EquipajePasajero3;
-	delete EquipajePasajero4;
-	delete EquipajePasajero5;
-	delete EquipajePasajero6;
-	delete EquipajePasajero7;
-	delete EquipajePasajero8;
-	delete EquipajePasajero9;
-	
 	delete FechayHoraDelPasajero1;
 	delete FechayHoraDelPasajero2;
 	delete FechayHoraDelPasajero3;
@@ -236,6 +203,21 @@ int main()
 	delete fechayhoraDelPasajero8;
 	delete fechayhoraDelPasajero9;
 
+	delete EquipajePasajero1;
+	delete EquipajePasajero1plus;
+	delete EquipajePasajero2;
+	delete EquipajePasajero3;
+	delete EquipajePasajero4;
+	delete EquipajePasajero5;
+	delete EquipajePasajero6;
+	delete EquipajePasajero7;
+	delete EquipajePasajero8;
+	delete EquipajePasajero9; 
+	
+	delete ListaEquipajeDelVuelo1;
+	delete ListaEquipajeDelVuelo2;
+	delete ListaEquipajeDelVuelo3;
+	
 	delete ListaEquipajePasajero1;
 	delete ListaEquipajePasajero2;
 	delete ListaEquipajePasajero3;
@@ -246,12 +228,59 @@ int main()
 	delete ListaEquipajePasajero8;
 	delete ListaEquipajePasajero9;
 
+    delete Pasajero1;
+	delete Pasajero2;
+	delete Pasajero3;
+	delete Pasajero4;
+	delete Pasajero5;
+	delete Pasajero6;
+	delete Pasajero7;
+	delete Pasajero8;
+	delete Pasajero9;
+	
+	delete ListaDePasajeros;
+	delete ListaDePasajeros2;
+	delete ListaDePasajeros3; 
+
 	delete avion1;
 	delete avion2;
 	delete avion3;
 	delete avion4;
 
+ delete ListaDeAviones;
+
 	delete vuelo1;
 	delete vuelo2;
 	delete vuelo3;
+
+	
+	delete ListaDeVuelos;
+   
+
+     delete aeroparque;
 }
+ 
+
+
+	
+
+    
+	
+
+   
+
+	
+
+	
+
+   
+   
+
+	
+	
+	
+	
+
+	
+
+	
