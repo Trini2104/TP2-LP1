@@ -22,7 +22,6 @@ public:
 	{
 		return ListaEquipaje;
 	}
-
 	cEquipaje* getEquipaje(int i)
 	{
 		if (i < capacidad && i >= 0)

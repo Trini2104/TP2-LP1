@@ -41,13 +41,17 @@ void cPasajero::desasociarEquipaje()
 	 equipaje = NULL;
 };
 bool cPasajero::AgregarEquipajePasajero(cEquipaje* _equipaje)
-{	
-	if (ListaDeValijasATransportar->PesoTotalEquipaje() + _equipaje->getPesoDelEquipaje() < 25) //si la suma de todo su equipaje mas el que desea agregar es menor a todo su equipaje puede agregarlo
+{
+	try
 	{
-		ListaDeValijasATransportar->AgregarEquipaje(_equipaje);
-		return true;
+		if (ListaDeValijasATransportar->PesoTotalEquipaje() + _equipaje->getPesoDelEquipaje() < 25) //si la suma de todo su equipaje mas el que desea agregar es menor a todo su equipaje puede agregarlo
+		{
+			ListaDeValijasATransportar->AgregarEquipaje(_equipaje);
+			return true;
+		}
+		if (ListaDeValijasATransportar->PesoTotalEquipaje() + _equipaje->getPesoDelEquipaje() < 25) throw " EL PESO DE SU EQUIPAJE EXCEDE EL MAXIMO PERMITIDO ";
 	}
-	else
+	catch (const char* msj)
 	{
 		return false;
 	}
@@ -71,8 +75,8 @@ string cPasajero::to_string()
 		"DNI: " + DNI + "\n" +
 		"Numero de vuelo: " + NumVuelo + "\n" +
 		"Numero de asiento: " + NumAsiento + "\n"+
-	    "Cantidad de equipaje: " + std::to_string(equipaje->getCantidadDeEquipaje()) +"\n"+
-		"Peso del equipaje: " + std::to_string(equipaje->getPesoDelEquipaje()) + "\n";
+	    "Cantidad de equipaje: " + std::to_string(ListaDeValijasATransportar->getocupados()) +"\n"+
+		"Peso del equipaje: " + std::to_string(ListaDeValijasATransportar->PesoTotalEquipaje()) + "\n";
 
 }
 void cPasajero:: imprimir()

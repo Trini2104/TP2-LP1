@@ -54,14 +54,22 @@ void cVuelo::NumeroDeVueloRandom()
 };
 bool cVuelo::AgregarPasajeroAlVuelo(cPasajero* _pasajero)  //agrega un pasajero al vuelo, osea a la lista de pasajeros de ese vuelo
 {
-	if (avion->getCantidadActualDePasajeros()< avion->getCantidadPasajerosPermitidos()) // si en el avion asociado al vuelo, hay lugar
+	try 
 	{
-		if (ListaPasajeros->AgregarPasajero(_pasajero) == true) // agrego el pasajero al vuelo
+		if (avion->getCantidadActualDePasajeros() < avion->getCantidadPasajerosPermitidos()) // si en el avion asociado al vuelo, hay lugar
 		{
-			return true; // retorno verdadero, sino retorno falso
+			if (ListaPasajeros->AgregarPasajero(_pasajero) == true) // agrego el pasajero al vuelo
+			{
+				return true; // retorno verdadero, sino retorno falso
+			}
 		}
-		else
-			return false;
+		if (avion->getCantidadActualDePasajeros() > avion->getCantidadPasajerosPermitidos()) throw " AVION LLENO";
+		// si no hay lugar, lanzo una excepcion
+	}
+	catch (const char* msj)
+	{
+		cout << msj << endl;
+		return false; // no lo agregue
 	}
 }
 bool cVuelo::CambiarPasajeroAlVuelo(cPasajero*_pasajero,cPasajero*_pasajerocambio)

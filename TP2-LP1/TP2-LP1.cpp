@@ -20,6 +20,7 @@ int main()
 	Pasajero1->asignarequipaje(EquipajePasajero1);
 	cListaEquipaje* ListaEquipajePasajero1 = new cListaEquipaje(MAX);
 	ListaEquipajePasajero1->AgregarEquipaje(EquipajePasajero1);
+	ListaEquipajePasajero1->AgregarEquipaje(EquipajePasajero1plus);
 	Pasajero1->AsignarListaEquipajeDelPasajero(ListaEquipajePasajero1);
 
 	//PRUEBA DE PASAJEROS
@@ -116,7 +117,7 @@ int main()
 	cListaPasajeros* ListaDePasajeros = new cListaPasajeros(MAX);
 	cListaPasajeros* ListaDePasajeros2 = new cListaPasajeros(MAX);
 	cListaPasajeros* ListaDePasajeros3 = new cListaPasajeros(MAX);
-	cAeropuerto* aeroparque = new cAeropuerto("AE58961565", 0);
+	cAeropuerto* aeroparque = new cAeropuerto("AE58961565", 96);
 
 	//ASIGNACIONES PARA EL AEROPUERTO
 	ListaDeAviones->AgregarAvion(avion1);
@@ -169,6 +170,25 @@ int main()
 	vuelo3->AsignarListaPasajeros(ListaDePasajeros3);
 	vuelo3->asociarAvionConVuelo(avion3);
 	vuelo3->AsignarFechaYhora(fechayhoravuelo3);
+
+	aeroparque->imprimir();
+	cout << vuelo1;
+	cout << vuelo2;
+	cout << vuelo3;
+	avion1->imprimir();
+	avion2->imprimir();
+	avion3->imprimir();
+	avion4->imprimir();
+	Pasajero1->imprimir();
+	Pasajero2->imprimir();
+	Pasajero3->imprimir();
+	Pasajero4->imprimir();
+	Pasajero5->imprimir();
+	Pasajero6->imprimir();
+	Pasajero7->imprimir();
+	Pasajero8->imprimir();
+	Pasajero9->imprimir();
+
 
 	//PRUEBA DE AEROPUERTO TODO OK
 	//aeroparque->DarPermiso(avion1); 
