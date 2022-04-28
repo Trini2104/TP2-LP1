@@ -21,12 +21,13 @@ int main()
 	cListaEquipaje* ListaEquipajePasajero1 = new cListaEquipaje(MAX);
 	ListaEquipajePasajero1->AgregarEquipaje(EquipajePasajero1);
 	Pasajero1->AsignarListaEquipajeDelPasajero(ListaEquipajePasajero1);
+
 	//PRUEBA DE PASAJEROS
 	/*Pasajero1->AgregarEquipajePasajero(EquipajePasajero1plus);
 	Pasajero1->EliminarEquipajePasajero(EquipajePasajero1plus);*/
 
 	cPasajero* Pasajero2 = new cPasajero("22154365", "Ana", "Pedrites", "270", "67");
-	cEquipaje* EquipajePasajero2 = new cEquipaje(15,"22154365");
+	cEquipaje* EquipajePasajero2 = new cEquipaje(15, "22154365");
 	cListaEquipaje* ListaEquipajePasajero2 = new cListaEquipaje(MAX);
 	ListaEquipajePasajero2->AgregarEquipaje(EquipajePasajero2);
 	cFecha* FechayHoraDelPasajero2 = new cFecha(24, 24, 7, 1, 4, 4, 2022, 2022, EnHorario);
@@ -79,7 +80,7 @@ int main()
 	Pasajero7->asignarFechaYHoraVuelo(fechayhoraDelPasajero7);
 	Pasajero7->AsignarListaEquipajeDelPasajero(ListaEquipajePasajero7);
 
-	cPasajero* Pasajero8= new cPasajero("488348", "Jose", "Moreno", "510", "58");
+	cPasajero* Pasajero8 = new cPasajero("488348", "Jose", "Moreno", "510", "58");
 	cEquipaje* EquipajePasajero8 = new cEquipaje(5.6, "488348");
 	Pasajero8->asignarequipaje(EquipajePasajero8);
 	cListaEquipaje* ListaEquipajePasajero8 = new cListaEquipaje(MAX);
@@ -98,7 +99,7 @@ int main()
 	Pasajero9->AsignarListaEquipajeDelPasajero(ListaEquipajePasajero9);
 
 	//CREO VUELOS Y AVIONES 
-	cAvion* avion1 = new cAvion("AV55", 70, 68, 1750.6, 2500,2, Despegando);
+	cAvion* avion1 = new cAvion("AV55", 70, 68, 1750.6, 2500, 2, Despegando);
 	cAvion* avion2 = new cAvion("AV299", 75, 60, 2500, 1540.6, 2, Aterrizando);
 	cAvion* avion3 = new cAvion("AV3665", 55, 55, 2500, 1950.6, 2, PidiendoPermisoParaAterrizar);
 	cAvion* avion4 = new cAvion("AV4885", 80, 48, 2500, 1110.6, 2, PidiendoPermisoParaDespegar);
@@ -106,7 +107,7 @@ int main()
 	cVuelo* vuelo2 = new cVuelo("VU2", Aterrizando, Arribo, MarDelPlata);
 	cVuelo* vuelo3 = new cVuelo("VU3", PidiendoPermisoParaAterrizar, Partida, Salta);
 
-	 // CREO LISTAS Y EL AEROPUERTO
+	// CREO LISTAS Y EL AEROPUERTO
 	cListaAviones* ListaDeAviones = new cListaAviones(MAX);
 	cListaVuelos* ListaDeVuelos = new cListaVuelos(MAX);
 	cListaEquipaje* ListaEquipajeDelVuelo1 = new cListaEquipaje(MAX);
@@ -123,7 +124,7 @@ int main()
 	ListaDeAviones->AgregarAvion(avion3);
 	ListaDeAviones->AgregarAvion(avion4);
 	aeroparque->AsignarListaAviones(ListaDeAviones);
-	
+
 	ListaDeVuelos->AgregarVuelo(vuelo1);
 	ListaDeVuelos->AgregarVuelo(vuelo2);
 	ListaDeVuelos->AgregarVuelo(vuelo3);
@@ -137,7 +138,7 @@ int main()
 	ListaDePasajeros2->AgregarPasajero(Pasajero4);
 	ListaDePasajeros2->AgregarPasajero(Pasajero5);
 	ListaDePasajeros2->AgregarPasajero(Pasajero6);
-		
+
 	ListaDePasajeros3->AgregarPasajero(Pasajero7);
 	ListaDePasajeros3->AgregarPasajero(Pasajero8);
 	ListaDePasajeros3->AgregarPasajero(Pasajero9);
@@ -156,7 +157,7 @@ int main()
 	ListaEquipajeDelVuelo2->AgregarEquipaje(EquipajePasajero6);
 	cFecha* fechayhoravuelo2 = new cFecha(21, 22, 2315, 1025, 5, 5, 2023, 2023, EnHorario);
 	vuelo2->AsignarListaEquipajeDelVuelo(ListaEquipajeDelVuelo2);
-    vuelo2->AsignarListaPasajeros(ListaDePasajeros2);
+	vuelo2->AsignarListaPasajeros(ListaDePasajeros2);
 	vuelo2->asociarAvionConVuelo(avion2);
 	vuelo2->AsignarFechaYhora(fechayhoravuelo2);
 
@@ -165,7 +166,7 @@ int main()
 	ListaEquipajeDelVuelo3->AgregarEquipaje(EquipajePasajero9);
 	cFecha* fechayhoravuelo3 = new cFecha(30, 30, 800, 1545, 4, 4, 2022, 2022, ConDemora);
 	vuelo3->AsignarListaEquipajeDelVuelo(ListaEquipajeDelVuelo3);
-    vuelo3->AsignarListaPasajeros(ListaDePasajeros3);
+	vuelo3->AsignarListaPasajeros(ListaDePasajeros3);
 	vuelo3->asociarAvionConVuelo(avion3);
 	vuelo3->AsignarFechaYhora(fechayhoravuelo3);
 
@@ -178,13 +179,14 @@ int main()
 	//cout << " vuelos despegados en el dia:" << aeroparque->CantidadDeVuelosDespegadosXDia() << endl;
 	//cout << " porcentaje de vuelos a horario:" << aeroparque->PorcentajeDeVuelosEnHorario() << endl;
 	//aeroparque->CantidadTotalDePasajerosXDia(); funciona:)
-	
+
 	//PROBAMOS VUELO
-	//cout << " " << vuelo1->ObtenerDatosPasajero(Pasajero1->getDNI()) << endl; FUNCIONA :)
+	//cout << " " << vuelo1->ObtenerDatosPasajero(Pasajero1->getDNI()) << endl;
 	//vuelo1->AgregarPasajeroAlVuelo(Pasajero8); FUNCIONA :)
 	//vuelo1->CambiarPasajeroAlVuelo(Pasajero1, Pasajero6); FUNCIONA :)
 	//vuelo1->EliminarPasajeroAlVuelo(Pasajero2);FUNCIONA :)
 	//vuelo1->pesototaldelvuelo(); // FUNCIONA :)
+	//cout << vuelo1; funciona 
 
 	//PROBAMOS AVION
 	//avion1->ChequearCargaMaxima();
@@ -192,4 +194,64 @@ int main()
 	//avion2->Despegar(); FUNCIONA
 	//avion1->imprimir();
 
+	delete ListaDeAviones;
+	delete ListaDeVuelos;
+	delete ListaEquipajeDelVuelo1;
+	delete ListaEquipajeDelVuelo2;
+	delete ListaEquipajeDelVuelo3;
+	delete ListaDePasajeros;
+	delete ListaDePasajeros2;
+	delete ListaDePasajeros3;
+
+	delete aeroparque;
+
+	delete Pasajero1;
+	delete Pasajero2;
+	delete Pasajero3;
+	delete Pasajero4;
+	delete Pasajero5;
+	delete Pasajero6;
+	delete Pasajero7;
+	delete Pasajero8;
+	delete Pasajero9;
+
+	delete EquipajePasajero1;
+	delete EquipajePasajero1plus;
+	delete EquipajePasajero2;
+	delete EquipajePasajero3;
+	delete EquipajePasajero4;
+	delete EquipajePasajero5;
+	delete EquipajePasajero6;
+	delete EquipajePasajero7;
+	delete EquipajePasajero8;
+	delete EquipajePasajero9;
+	
+	delete FechayHoraDelPasajero1;
+	delete FechayHoraDelPasajero2;
+	delete FechayHoraDelPasajero3;
+	delete fechayhoraDelPasajero4;
+	delete fechayhoraDelPasajero5;
+	delete fechayhoraDelPasajero6;
+	delete fechayhoraDelPasajero7;
+	delete fechayhoraDelPasajero8;
+	delete fechayhoraDelPasajero9;
+
+	delete ListaEquipajePasajero1;
+	delete ListaEquipajePasajero2;
+	delete ListaEquipajePasajero3;
+	delete ListaEquipajePasajero4;
+	delete ListaEquipajePasajero5;
+	delete ListaEquipajePasajero6;
+	delete ListaEquipajePasajero7;
+	delete ListaEquipajePasajero8;
+	delete ListaEquipajePasajero9;
+
+	delete avion1;
+	delete avion2;
+	delete avion3;
+	delete avion4;
+
+	delete vuelo1;
+	delete vuelo2;
+	delete vuelo3;
 }

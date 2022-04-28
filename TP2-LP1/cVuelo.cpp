@@ -97,14 +97,86 @@ void cVuelo::pesototaldelvuelo()
 	PesoTotal = PesoValijas + pesopasajeros; //suma el peso de los pasajeros y de las valijas
 	this->avion->setPesoReal(PesoTotal); //ingresa el peso total del vuelo a su avion correspondiente
 }
-ostream& operator<<(ostream &out, cVuelo* vuelo)
+string cVuelo::to_string()
 {
-	out << vuelo->NumVuelo << endl;
-	out << vuelo->TipoVuelo << endl;
-	out << vuelo->aeropuertoDestino << endl;
-	out << vuelo->avion << endl;
-	out << vuelo->EstadoVuelo<< endl;
-	
+	string tipovuelo= conviertoAstringTipoVuelo();
+	string estadovuelo = conviertoAstringEstadoVuelo();
+	return
+		"Numero de Vuelo:" + NumVuelo + "\n" +
+		"Tipo De Vuelo: " + (TipoVuelo ? "arribo" : "partida") + "\n" +
+		"Estado Del Vuelo:" + estadovuelo + "\n" +
+		"Destino: " + tipovuelo + "\n" +
+		"Avion: " + avion->to_string() + "\n";
+}
+string cVuelo::conviertoAstringTipoVuelo()
+{
+	string tipovuelo;
+	if (aeropuertoDestino == 0)
+	{
+		tipovuelo = "iguazu";
+	}
+	if (aeropuertoDestino == 1)
+	{
+		tipovuelo = "cordoba";
+	}
+	if (aeropuertoDestino == 2)
+	{
+		tipovuelo = "MarDelPlata";
+	}
+	if (aeropuertoDestino == 3)
+	{
+		tipovuelo = "bariloche";
+	}
+	if (aeropuertoDestino == 4)
+	{
+		tipovuelo = "usuhaia";
+	}
+	if (aeropuertoDestino == 5)
+	{
+		tipovuelo = "salta";
+	}
+	return tipovuelo;
+}
+string cVuelo::conviertoAstringEstadoVuelo()
+{
+	string estadovuelo;
+	if (EstadoVuelo == 0)
+	{
+		estadovuelo = " Despegando";
+	}
+	if (EstadoVuelo == 1)
+	{
+		estadovuelo = " Aterrizando";
+	}
+	if (EstadoVuelo == 2)
+	{
+		estadovuelo = "PidiendoPermisoParaAterrizar";
+	}
+	if (EstadoVuelo == 3)
+	{
+		estadovuelo = " PidiendoPermisoParaDespegar";
+	}
+	if (EstadoVuelo == 4)
+	{
+		estadovuelo = "  RecibiendoPermisoParaAterrizar";
+	}
+	if (EstadoVuelo == 5)
+	{
+		estadovuelo = " RecibiendoPermisoParaDespegar ";
+	}
+	if (EstadoVuelo == 6)
+	{
+		estadovuelo = "NoRecibiendoPermisoParaAterrizar  ";
+	}
+	if (EstadoVuelo == 7)
+	{
+		estadovuelo = "NoRecibiendoPermisoParaDespegar  ";
+	}
+	return estadovuelo;
+}
+ostream& operator<<(ostream& out, cVuelo* vuelo)
+{
+	out << vuelo->to_string() << endl;
 	return out;
 }
 void cVuelo::asociarAvionConVuelo(cAvion* _avion)
