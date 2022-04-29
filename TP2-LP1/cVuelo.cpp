@@ -107,8 +107,8 @@ void cVuelo::pesototaldelvuelo()
 }
 string cVuelo::to_string()
 {
-	string tipovuelo= conviertoAstringTipoVuelo();
-	string estadovuelo = conviertoAstringEstadoVuelo();
+	string tipovuelo= conviertoAstringTipoVuelo(aeropuertoDestino);
+	string estadovuelo = conviertoAstringEstadoVuelo(EstadoVuelo);
 	return
 		"Numero de Vuelo:" + NumVuelo + "\n" +
 		"Tipo De Vuelo: " + (TipoVuelo ? "arribo" : "partida") + "\n" +
@@ -116,71 +116,64 @@ string cVuelo::to_string()
 		"Destino: " + tipovuelo + "\n" +
 		"Avion: " + avion->to_string() + "\n";
 }
-string cVuelo::conviertoAstringTipoVuelo()
+string cVuelo::conviertoAstringTipoVuelo(destinos AeropuertoDeDestino)
 {
-	string tipovuelo;
-	if (aeropuertoDestino == 0)
+	switch(AeropuertoDeDestino)
 	{
-		tipovuelo = "iguazu";
+	case destinos::Bariloche:
+			return "Bariloche";
+			break;
+	case destinos::Cordoba:
+		return "Cordoba";
+		break;
+	case destinos::Iguazu:
+		return "Iguazu";
+		break;
+	case destinos::MarDelPlata:
+		return "Mar del Plata";
+		break;
+	case destinos::Salta:
+		return"Salta";
+		break;
+	case destinos::Ushuaia:
+		return "Usuhaia";
+		break;
+			
 	}
-	if (aeropuertoDestino == 1)
-	{
-		tipovuelo = "cordoba";
-	}
-	if (aeropuertoDestino == 2)
-	{
-		tipovuelo = "MarDelPlata";
-	}
-	if (aeropuertoDestino == 3)
-	{
-		tipovuelo = "bariloche";
-	}
-	if (aeropuertoDestino == 4)
-	{
-		tipovuelo = "usuhaia";
-	}
-	if (aeropuertoDestino == 5)
-	{
-		tipovuelo = "salta";
-	}
-	return tipovuelo;
 }
-string cVuelo::conviertoAstringEstadoVuelo()
+string cVuelo::conviertoAstringEstadoVuelo(estado EstadoDelVuelo)
 {
-	string estadovuelo;
-	if (EstadoVuelo == 0)
+	switch (EstadoDelVuelo)
 	{
-		estadovuelo = " Despegando";
+	case estado::Aterrizando:
+		return"Aterrizando";
+		break;
+	case estado::Despegando:
+		return"Despegando";
+		break;
+	case estado::Nodespega:
+		return"No Despega";
+		break;
+	case estado::NoRecibiendoPermisoParaAterrizar:
+		return"No recibiendo Permiso Para Aterrizar";
+		break;
+	case estado::NoRecibiendoPermisoParaDespegar:
+		return"No recibiendo permiso para despegar";
+		break;
+	case estado::PidiendoPermisoParaAterrizar:
+		return"Pidiendo permiso para aterrizar";
+		break;
+	case estado::PidiendoPermisoParaDespegar:
+		return"Pidiendo permiso para despegar";
+		break;
+	case estado::RecibiendoPermisoParaAterrizar:
+		return"Recibiendo permiso para aterrizar";
+		break;
+	case estado::RecibiendoPermisoParaDespegar:
+		return"Recibiendo permiso para despegar";
+		break;
+
 	}
-	if (EstadoVuelo == 1)
-	{
-		estadovuelo = " Aterrizando";
-	}
-	if (EstadoVuelo == 2)
-	{
-		estadovuelo = "PidiendoPermisoParaAterrizar";
-	}
-	if (EstadoVuelo == 3)
-	{
-		estadovuelo = " PidiendoPermisoParaDespegar";
-	}
-	if (EstadoVuelo == 4)
-	{
-		estadovuelo = "  RecibiendoPermisoParaAterrizar";
-	}
-	if (EstadoVuelo == 5)
-	{
-		estadovuelo = " RecibiendoPermisoParaDespegar ";
-	}
-	if (EstadoVuelo == 6)
-	{
-		estadovuelo = "NoRecibiendoPermisoParaAterrizar  ";
-	}
-	if (EstadoVuelo == 7)
-	{
-		estadovuelo = "NoRecibiendoPermisoParaDespegar  ";
-	}
-	return estadovuelo;
 }
 ostream& operator<<(ostream& out, cVuelo* vuelo)
 {

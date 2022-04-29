@@ -206,7 +206,7 @@ int main()
 	//vuelo1->CambiarPasajeroAlVuelo(Pasajero1, Pasajero6); FUNCIONA :)
 	//vuelo1->EliminarPasajeroAlVuelo(Pasajero2);FUNCIONA :)
 	//vuelo1->pesototaldelvuelo(); // FUNCIONA :)
-	//cout << vuelo1; funciona 
+	cout << vuelo1; 
 
 	//PROBAMOS AVION
 	//avion1->ChequearCargaMaxima();

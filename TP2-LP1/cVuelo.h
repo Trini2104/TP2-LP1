@@ -72,8 +72,8 @@ public:
 	void DesasociarAvionConVuelo();
 	void AsignarFechaYhora(cFecha* _fechayhora);
 	void desasignarFechaYhora();
-	string conviertoAstringTipoVuelo();
-	string conviertoAstringEstadoVuelo();
+	string conviertoAstringTipoVuelo(destinos AeropuertoDeDestino);
+	string conviertoAstringEstadoVuelo(estado EstadoDelVuelo);
 	string to_string();
 	void imprimir();
 };
